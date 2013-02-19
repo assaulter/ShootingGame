@@ -9,7 +9,7 @@
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
-#import "HelloWorldLayer.h"
+#import "GameScene.h"
 
 @implementation AppController
 
@@ -59,8 +59,8 @@
 	navController_.navigationBarHidden = YES;
 
 	// set the Navigation Controller as the root view controller
-//	[window_ setRootViewController:rootViewController_];
-	[window_ addSubview:navController_.view];
+	[window_ addSubview:navController_.view];	// Generates flicker.
+//	[window_ setRootViewController:navController_];
 
 	// make main window visible
 	[window_ makeKeyAndVisible];
@@ -84,7 +84,7 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-	[director_ pushScene: [HelloWorldLayer scene]]; 
+	[director_ pushScene: [GameScene scene]];
 
 	return YES;
 }
@@ -92,9 +92,10 @@
 // Supported orientations: Landscape. Customize it for your own needs
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+//	return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+    // 縦の場合は　UIInterfaceOrientationIsPortrait( interfaceOrientation )を設定する。
 }
-
 
 // getting a call, pause the game
 -(void) applicationWillResignActive:(UIApplication *)application

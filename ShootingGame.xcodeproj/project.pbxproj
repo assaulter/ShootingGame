@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362B3B5F16D3785C005A5872 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 362B3B5E16D3785C005A5872 /* GameScene.m */; };
+		362B3B6116D37F01005A5872 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 362B3B6016D37F01005A5872 /* Default-568h@2x.png */; };
+		36D6A33A16D3948E007A7C4E /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A33916D3948E007A7C4E /* Player.png */; };
 		DC0864B815BD8CE60044A820 /* CCNode+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0864B515BD8CE60044A820 /* CCNode+Debug.h */; };
 		DC0864B915BD8CE60044A820 /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B615BD8CE60044A820 /* CCNode+Debug.m */; };
 		DC0864BA15BD8CE60044A820 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B715BD8CE60044A820 /* ccCArray.m */; };
@@ -32,7 +35,6 @@
 		DC0C4A1F154AB4DD00B4B727 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = DC0C4A1E154AB4DD00B4B727 /* iTunesArtwork */; };
 		DC0C4B77154AB4DF00B4B727 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4B76154AB4DF00B4B727 /* main.m */; };
 		DC0C4B7A154AB4DF00B4B727 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4B79154AB4DF00B4B727 /* AppDelegate.m */; };
-		DC0C4B7D154AB4DF00B4B727 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4B7C154AB4DF00B4B727 /* HelloWorldLayer.m */; };
 		DC0C4B88154AB55A00B4B727 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C4A01154AB4DD00B4B727 /* Foundation.framework */; };
 		DC0C4B92154AB57C00B4B727 /* libcocos2d-library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C4B87154AB55A00B4B727 /* libcocos2d-library.a */; };
 		DC0C4C84154AB59800B4B727 /* CCAction.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0C4B95154AB59800B4B727 /* CCAction.h */; };
@@ -261,6 +263,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		362B3B5D16D3785C005A5872 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		362B3B5E16D3785C005A5872 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		362B3B6016D37F01005A5872 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		36D6A33916D3948E007A7C4E /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
@@ -290,8 +296,6 @@
 		DC0C4B76154AB4DF00B4B727 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC0C4B78154AB4DF00B4B727 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DC0C4B79154AB4DF00B4B727 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DC0C4B7B154AB4DF00B4B727 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		DC0C4B7C154AB4DF00B4B727 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		DC0C4B87154AB55A00B4B727 /* libcocos2d-library.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libcocos2d-library.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0C4B95154AB59800B4B727 /* CCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAction.h; sourceTree = "<group>"; };
 		DC0C4B96154AB59800B4B727 /* CCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAction.m; sourceTree = "<group>"; };
@@ -555,6 +559,7 @@
 		DC0C49E6154AB4DD00B4B727 = {
 			isa = PBXGroup;
 			children = (
+				362B3B6016D37F01005A5872 /* Default-568h@2x.png */,
 				DC0C4A07154AB4DD00B4B727 /* cocos2d-2.x-ARC-iOS */,
 				DC0C49F4154AB4DD00B4B727 /* Frameworks */,
 				DC0C49F2154AB4DD00B4B727 /* Products */,
@@ -591,11 +596,11 @@
 			children = (
 				DC0C4B78154AB4DF00B4B727 /* AppDelegate.h */,
 				DC0C4B79154AB4DF00B4B727 /* AppDelegate.m */,
-				DC0C4B7B154AB4DF00B4B727 /* HelloWorldLayer.h */,
-				DC0C4B7C154AB4DF00B4B727 /* HelloWorldLayer.m */,
 				DC0C4A08154AB4DD00B4B727 /* Resources */,
 				DC0C4B93154AB59800B4B727 /* libs */,
 				DC0C4B74154AB4DF00B4B727 /* Supporting Files */,
+				362B3B5D16D3785C005A5872 /* GameScene.h */,
+				362B3B5E16D3785C005A5872 /* GameScene.m */,
 			);
 			path = "cocos2d-2.x-ARC-iOS";
 			sourceTree = "<group>";
@@ -603,6 +608,7 @@
 		DC0C4A08154AB4DD00B4B727 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				36D6A33916D3948E007A7C4E /* Player.png */,
 				DC0C4A09154AB4DD00B4B727 /* Default.png */,
 				DC0C4A0B154AB4DD00B4B727 /* fps_images.png */,
 				DC0C4A0D154AB4DD00B4B727 /* fps_images-hd.png */,
@@ -1177,6 +1183,8 @@
 				DC0C4A1A154AB4DD00B4B727 /* Icon.png in Resources */,
 				DC0C4A1C154AB4DD00B4B727 /* Icon@2x.png in Resources */,
 				DC0C4A1F154AB4DD00B4B727 /* iTunesArtwork in Resources */,
+				362B3B6116D37F01005A5872 /* Default-568h@2x.png in Resources */,
+				36D6A33A16D3948E007A7C4E /* Player.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1189,7 +1197,7 @@
 			files = (
 				DC0C4B77154AB4DF00B4B727 /* main.m in Sources */,
 				DC0C4B7A154AB4DF00B4B727 /* AppDelegate.m in Sources */,
-				DC0C4B7D154AB4DF00B4B727 /* HelloWorldLayer.m in Sources */,
+				362B3B5F16D3785C005A5872 /* GameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1359,6 +1367,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = ShootingGame;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1378,6 +1387,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = ShootingGame;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
