@@ -10,6 +10,9 @@
 		362B3B5F16D3785C005A5872 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 362B3B5E16D3785C005A5872 /* GameScene.m */; };
 		362B3B6116D37F01005A5872 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 362B3B6016D37F01005A5872 /* Default-568h@2x.png */; };
 		36D6A33A16D3948E007A7C4E /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A33916D3948E007A7C4E /* Player.png */; };
+		36D6A33C16D3A624007A7C4E /* Projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A33B16D3A624007A7C4E /* Projectile.png */; };
+		36D6A34216D42218007A7C4E /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A34116D42218007A7C4E /* Player.m */; };
+		36D6A34416D42639007A7C4E /* Projectile2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A34316D42639007A7C4E /* Projectile2.jpg */; };
 		DC0864B815BD8CE60044A820 /* CCNode+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0864B515BD8CE60044A820 /* CCNode+Debug.h */; };
 		DC0864B915BD8CE60044A820 /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B615BD8CE60044A820 /* CCNode+Debug.m */; };
 		DC0864BA15BD8CE60044A820 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B715BD8CE60044A820 /* ccCArray.m */; };
@@ -267,6 +270,10 @@
 		362B3B5E16D3785C005A5872 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		362B3B6016D37F01005A5872 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		36D6A33916D3948E007A7C4E /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
+		36D6A33B16D3A624007A7C4E /* Projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Projectile.png; sourceTree = "<group>"; };
+		36D6A34016D42218007A7C4E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		36D6A34116D42218007A7C4E /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		36D6A34316D42639007A7C4E /* Projectile2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Projectile2.jpg; sourceTree = "<group>"; };
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
@@ -601,6 +608,8 @@
 				DC0C4B74154AB4DF00B4B727 /* Supporting Files */,
 				362B3B5D16D3785C005A5872 /* GameScene.h */,
 				362B3B5E16D3785C005A5872 /* GameScene.m */,
+				36D6A34016D42218007A7C4E /* Player.h */,
+				36D6A34116D42218007A7C4E /* Player.m */,
 			);
 			path = "cocos2d-2.x-ARC-iOS";
 			sourceTree = "<group>";
@@ -608,6 +617,8 @@
 		DC0C4A08154AB4DD00B4B727 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				36D6A34316D42639007A7C4E /* Projectile2.jpg */,
+				36D6A33B16D3A624007A7C4E /* Projectile.png */,
 				36D6A33916D3948E007A7C4E /* Player.png */,
 				DC0C4A09154AB4DD00B4B727 /* Default.png */,
 				DC0C4A0B154AB4DD00B4B727 /* fps_images.png */,
@@ -1185,6 +1196,8 @@
 				DC0C4A1F154AB4DD00B4B727 /* iTunesArtwork in Resources */,
 				362B3B6116D37F01005A5872 /* Default-568h@2x.png in Resources */,
 				36D6A33A16D3948E007A7C4E /* Player.png in Resources */,
+				36D6A33C16D3A624007A7C4E /* Projectile.png in Resources */,
+				36D6A34416D42639007A7C4E /* Projectile2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1198,6 +1211,7 @@
 				DC0C4B77154AB4DF00B4B727 /* main.m in Sources */,
 				DC0C4B7A154AB4DF00B4B727 /* AppDelegate.m in Sources */,
 				362B3B5F16D3785C005A5872 /* GameScene.m in Sources */,
+				36D6A34216D42218007A7C4E /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

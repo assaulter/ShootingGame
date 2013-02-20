@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Player.h"
 
 @interface GameScene : CCLayerColor {
-    CCSprite *_player;
+    Player *_player;
+    NSMutableArray *_items;
+    NSMutableArray *_bullets;
+    BOOL _isTouches;
+    CGPoint _touchLocation;
 }
 
 +(CCScene *) scene;
