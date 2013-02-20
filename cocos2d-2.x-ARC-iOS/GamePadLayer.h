@@ -1,5 +1,5 @@
 //
-//  Player.h
+//  GamePadLayer.h
 //  ShootingGame
 //
 //  Created by KazukiKubo on 2013/02/20.
@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface Player : CCSprite {
+@interface GamePadLayer : CCLayer {
+    
 }
 
 @end

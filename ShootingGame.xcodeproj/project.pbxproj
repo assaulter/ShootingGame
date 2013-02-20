@@ -16,6 +16,9 @@
 		36D6A34816D4E64A007A7C4E /* PowerUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A34616D4E64A007A7C4E /* PowerUp.png */; };
 		36D6A34916D4E64A007A7C4E /* SpeedUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A34716D4E64A007A7C4E /* SpeedUp.png */; };
 		36D6A34C16D4E85A007A7C4E /* PlayerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A34B16D4E85A007A7C4E /* PlayerLayer.m */; };
+		36D6A35016D4EB2E007A7C4E /* GamePadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A34F16D4EB2E007A7C4E /* GamePadLayer.m */; };
+		36D6A35316D4EC4A007A7C4E /* ItemLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A35216D4EC4A007A7C4E /* ItemLayer.m */; };
+		36D6A35716D4EF53007A7C4E /* PowerUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A35616D4EF53007A7C4E /* PowerUpItem.m */; };
 		DC0864B815BD8CE60044A820 /* CCNode+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0864B515BD8CE60044A820 /* CCNode+Debug.h */; };
 		DC0864B915BD8CE60044A820 /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B615BD8CE60044A820 /* CCNode+Debug.m */; };
 		DC0864BA15BD8CE60044A820 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B715BD8CE60044A820 /* ccCArray.m */; };
@@ -281,6 +284,12 @@
 		36D6A34716D4E64A007A7C4E /* SpeedUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpeedUp.png; sourceTree = "<group>"; };
 		36D6A34A16D4E85A007A7C4E /* PlayerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerLayer.h; sourceTree = "<group>"; };
 		36D6A34B16D4E85A007A7C4E /* PlayerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerLayer.m; sourceTree = "<group>"; };
+		36D6A34E16D4EB2E007A7C4E /* GamePadLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePadLayer.h; sourceTree = "<group>"; };
+		36D6A34F16D4EB2E007A7C4E /* GamePadLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePadLayer.m; sourceTree = "<group>"; };
+		36D6A35116D4EC4A007A7C4E /* ItemLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemLayer.h; sourceTree = "<group>"; };
+		36D6A35216D4EC4A007A7C4E /* ItemLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemLayer.m; sourceTree = "<group>"; };
+		36D6A35516D4EF53007A7C4E /* PowerUpItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerUpItem.h; sourceTree = "<group>"; };
+		36D6A35616D4EF53007A7C4E /* PowerUpItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerUpItem.m; sourceTree = "<group>"; };
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
@@ -577,8 +586,23 @@
 				362B3B5E16D3785C005A5872 /* GameScene.m */,
 				36D6A34A16D4E85A007A7C4E /* PlayerLayer.h */,
 				36D6A34B16D4E85A007A7C4E /* PlayerLayer.m */,
+				36D6A34E16D4EB2E007A7C4E /* GamePadLayer.h */,
+				36D6A34F16D4EB2E007A7C4E /* GamePadLayer.m */,
+				36D6A35116D4EC4A007A7C4E /* ItemLayer.h */,
+				36D6A35216D4EC4A007A7C4E /* ItemLayer.m */,
 			);
 			name = Layers;
+			sourceTree = "<group>";
+		};
+		36D6A35416D4EF26007A7C4E /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				36D6A34016D42218007A7C4E /* Player.h */,
+				36D6A34116D42218007A7C4E /* Player.m */,
+				36D6A35516D4EF53007A7C4E /* PowerUpItem.h */,
+				36D6A35616D4EF53007A7C4E /* PowerUpItem.m */,
+			);
+			name = Sprites;
 			sourceTree = "<group>";
 		};
 		DC0C49E6154AB4DD00B4B727 = {
@@ -619,14 +643,13 @@
 		DC0C4A07154AB4DD00B4B727 /* cocos2d-2.x-ARC-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				36D6A35416D4EF26007A7C4E /* Sprites */,
 				36D6A34D16D4E89C007A7C4E /* Layers */,
 				DC0C4B78154AB4DF00B4B727 /* AppDelegate.h */,
 				DC0C4B79154AB4DF00B4B727 /* AppDelegate.m */,
 				DC0C4A08154AB4DD00B4B727 /* Resources */,
 				DC0C4B93154AB59800B4B727 /* libs */,
 				DC0C4B74154AB4DF00B4B727 /* Supporting Files */,
-				36D6A34016D42218007A7C4E /* Player.h */,
-				36D6A34116D42218007A7C4E /* Player.m */,
 			);
 			path = "cocos2d-2.x-ARC-iOS";
 			sourceTree = "<group>";
@@ -1234,6 +1257,9 @@
 				362B3B5F16D3785C005A5872 /* GameScene.m in Sources */,
 				36D6A34216D42218007A7C4E /* Player.m in Sources */,
 				36D6A34C16D4E85A007A7C4E /* PlayerLayer.m in Sources */,
+				36D6A35016D4EB2E007A7C4E /* GamePadLayer.m in Sources */,
+				36D6A35316D4EC4A007A7C4E /* ItemLayer.m in Sources */,
+				36D6A35716D4EF53007A7C4E /* PowerUpItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

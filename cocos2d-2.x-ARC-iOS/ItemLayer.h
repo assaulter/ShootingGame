@@ -1,5 +1,5 @@
 //
-//  Player.h
+//  ItemLayer.h
 //  ShootingGame
 //
 //  Created by KazukiKubo on 2013/02/20.
@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface Player : CCSprite {
+@interface ItemLayer : CCLayer {
+    
 }
+
+@property(nonatomic, strong) NSMutableArray *items;
 
 @end
