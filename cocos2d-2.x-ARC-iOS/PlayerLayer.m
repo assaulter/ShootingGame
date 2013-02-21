@@ -11,10 +11,10 @@
 
 @implementation PlayerLayer
 
--(id)initWithWinSize:(CGSize)winSize {
+-(id)init {
     if (self = [super init]) {
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
         self.bullets = [NSMutableArray new];
-        
         self.player = [Player new];
         self.player.position = ccp(winSize.width/2, self.player.contentSize.height/2);
         [self addChild:self.player];

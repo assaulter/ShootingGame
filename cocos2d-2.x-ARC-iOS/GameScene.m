@@ -8,8 +8,6 @@
 
 #import "GameScene.h"
 
-static const float VELOCITY = 400; // 400pixel per 1sec
-
 @implementation GameScene
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -29,56 +27,33 @@ static const float VELOCITY = 400; // 400pixel per 1sec
 
 -(id)init {
     if (self = [super initWithColor:ccc4(255,255,255,255)]) {
-        self.isTouchEnabled = YES;
-        
-        CGSize winSize = [[CCDirector sharedDirector] winSize];
         _items = [NSMutableArray new];
         _bullets = [NSMutableArray new];
         // player関連を持つlayer
-        _playerLayer = [[PlayerLayer alloc]initWithWinSize:winSize];
+        _playerLayer = [[PlayerLayer alloc] init];
         [self addChild:_playerLayer z:0];
         // item関連を持つlayer
         _itemLayer = [[ItemLayer alloc] init];
         [self addChild:_itemLayer z:1];
+        // ユーザーの操作を受けるlayer
+        _gamePadLayer = [[GamePadLayer alloc] init];
+        [self addChild:_gamePadLayer z:3];
 
         [self schedule:@selector(update:)];
     }
     return self;
 }
 
--(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    // Choose one of the touches to work with
-    CGPoint location = [self getLocationFromTouches:touches];
-    _touchLocation = location;
-    _isTouches = YES;
-}
-
--(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    CGPoint location = [self getLocationFromTouches:touches];
-    _touchLocation = location;
-}
-
--(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    _isTouches = NO;
-}
-
-// UITouchから、Pointに変換して返すヘルパー関数
--(CGPoint)getLocationFromTouches:(NSSet*)touches {
-    UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInView:[touch view]];
-    return [[CCDirector sharedDirector] convertToGL:location];
-}
-
 // プレイヤーをtouchした位置に移動させる(runActionを使わないバージョン)
 -(void)movePlayer {
     // 長さ1に正規化されたベクトル
-    CGPoint v = ccpNormalize(ccpSub(_touchLocation, _playerLayer.player.position));
+    CGPoint v = ccpNormalize(ccpSub(_gamePadLayer.touchLocation, _playerLayer.player.position));
     _playerLayer.player.position = ccpAdd(v, _playerLayer.player.position);
 }
 
 // 今のところ当たり判定君, @param dt : 1/60sec
 -(void)update:(ccTime)dt {
-    if (_isTouches) {
+    if (_gamePadLayer.isTouches) {
         [self movePlayer];
     }
     

@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+// ユーザーの入力を受けるクラス
 @interface GamePadLayer : CCLayer {
-    
 }
+
+@property(nonatomic, assign) CGPoint touchLocation;
+@property(nonatomic, assign) BOOL isTouches;
 
 @end

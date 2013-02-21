@@ -10,10 +10,12 @@
 #import "cocos2d.h"
 #import "PlayerLayer.h"
 #import "ItemLayer.h"
+#import "GamePadLayer.h"
 
 @interface GameScene : CCLayerColor {
     PlayerLayer *_playerLayer;
     ItemLayer *_itemLayer;
+    GamePadLayer *_gamePadLayer;
     NSMutableArray *_items;
     NSMutableArray *_bullets;
     BOOL _isTouches;
