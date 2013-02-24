@@ -35,6 +35,9 @@
         // item関連を持つlayer
         _itemLayer = [[ItemLayer alloc] init];
         [self addChild:_itemLayer z:1];
+        // 敵関連を持つlayer
+        _enemyLayer = [[EnemyLayer alloc] init];
+        [self addChild:_enemyLayer z:2];
         // ユーザーの操作を受けるlayer
         _gamePadLayer = [[GamePadLayer alloc] init];
         [self addChild:_gamePadLayer z:3];
@@ -61,7 +64,8 @@
     Player *player = _playerLayer.player;
     
     CGRect playerRect = CGRectMake(player.position.x - (player.contentSize.width/2), player.position.y - (player.contentSize.height/2), player.contentSize.width, player.contentSize.height);
-        
+    
+    // TODO: 同じような制御構文(当たり判定)
     for (CCSprite *item in _itemLayer.items) {
         CGRect itemRect = CGRectMake(item.position.x - (item.contentSize.width/2), item.position.y - (item.contentSize.height/2), item.contentSize.width, item.contentSize.height);
         if (CGRectIntersectsRect(playerRect, itemRect)) { // itemとplayerが接触した。
@@ -70,10 +74,32 @@
             player.scale += 0.1f;
         }
     }
+    // 敵と弾の当たり判定
+    for (CCSprite *enemy in _enemyLayer.enemies) {
+        CGRect enemyRect = CGRectMake(enemy.position.x - (enemy.contentSize.width/2), enemy.position.y - (enemy.contentSize.height/2), enemy.contentSize.width, enemy.contentSize.height);
+        for (CCSprite *bullet in _playerLayer.bullets) {
+            CGRect bulletRect = CGRectMake(bullet.position.x - (bullet.contentSize.width/2), bullet.position.y - (bullet.contentSize.height/2), bullet.contentSize.width, bullet.contentSize.height);
+            if (CGRectIntersectsRect(enemyRect, bulletRect)) {
+                [itemsToDelete addObject:enemy];
+                [itemsToDelete addObject:bullet];
+            }
+        }
+    }
     
+    // TODO: 同じような制御構文(削除方法)
     for (CCSprite *item in itemsToDelete) {
         [_itemLayer.items removeObject:item];
         [_itemLayer removeChild:item cleanup:YES];
+    }
+    
+    for (CCSprite *enemy in itemsToDelete) {
+        [_enemyLayer.enemies removeObject:enemy];
+        [_enemyLayer removeChild:enemy cleanup:YES];
+    }
+    
+    for (CCSprite *bullet in itemsToDelete) {
+        [_playerLayer.bullets removeObject:bullet];
+        [_playerLayer removeChild:bullet cleanup:YES];
     }
 }
 

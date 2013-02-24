@@ -11,11 +11,13 @@
 #import "PlayerLayer.h"
 #import "ItemLayer.h"
 #import "GamePadLayer.h"
+#import "EnemyLayer.h"
 
 @interface GameScene : CCLayerColor {
     PlayerLayer *_playerLayer;
     ItemLayer *_itemLayer;
     GamePadLayer *_gamePadLayer;
+    EnemyLayer *_enemyLayer;
     NSMutableArray *_items;
     NSMutableArray *_bullets;
     BOOL _isTouches;
