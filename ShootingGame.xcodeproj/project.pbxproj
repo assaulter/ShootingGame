@@ -23,6 +23,8 @@
 		36D6A42216DAD2FB007A7C4E /* EnemyLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A42116DAD2FB007A7C4E /* EnemyLayer.m */; };
 		36D6A42416DAD385007A7C4E /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A42316DAD385007A7C4E /* Target.png */; };
 		36D6A42716DAD39F007A7C4E /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A42616DAD39F007A7C4E /* Enemy.m */; };
+		36D6A42E16DB0010007A7C4E /* ThreeWayPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A42D16DB0010007A7C4E /* ThreeWayPattern.m */; };
+		36D6A43116DB004F007A7C4E /* ParallelPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A43016DB004E007A7C4E /* ParallelPattern.m */; };
 		DC0864B815BD8CE60044A820 /* CCNode+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0864B515BD8CE60044A820 /* CCNode+Debug.h */; };
 		DC0864B915BD8CE60044A820 /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B615BD8CE60044A820 /* CCNode+Debug.m */; };
 		DC0864BA15BD8CE60044A820 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B715BD8CE60044A820 /* ccCArray.m */; };
@@ -303,6 +305,11 @@
 		36D6A42316DAD385007A7C4E /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target.png; sourceTree = "<group>"; };
 		36D6A42516DAD39E007A7C4E /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		36D6A42616DAD39F007A7C4E /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		36D6A42B16DAFFC5007A7C4E /* BulletPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletPattern.h; sourceTree = "<group>"; };
+		36D6A42C16DB000F007A7C4E /* ThreeWayPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeWayPattern.h; sourceTree = "<group>"; };
+		36D6A42D16DB0010007A7C4E /* ThreeWayPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeWayPattern.m; sourceTree = "<group>"; };
+		36D6A42F16DB004D007A7C4E /* ParallelPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallelPattern.h; sourceTree = "<group>"; };
+		36D6A43016DB004E007A7C4E /* ParallelPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallelPattern.m; sourceTree = "<group>"; };
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
@@ -623,6 +630,11 @@
 				36D6A41B16D93D9F007A7C4E /* ConcreteStrategy.m */,
 				36D6A42516DAD39E007A7C4E /* Enemy.h */,
 				36D6A42616DAD39F007A7C4E /* Enemy.m */,
+				36D6A42B16DAFFC5007A7C4E /* BulletPattern.h */,
+				36D6A42C16DB000F007A7C4E /* ThreeWayPattern.h */,
+				36D6A42D16DB0010007A7C4E /* ThreeWayPattern.m */,
+				36D6A42F16DB004D007A7C4E /* ParallelPattern.h */,
+				36D6A43016DB004E007A7C4E /* ParallelPattern.m */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -1286,6 +1298,8 @@
 				36D6A41C16D93DA0007A7C4E /* ConcreteStrategy.m in Sources */,
 				36D6A42216DAD2FB007A7C4E /* EnemyLayer.m in Sources */,
 				36D6A42716DAD39F007A7C4E /* Enemy.m in Sources */,
+				36D6A42E16DB0010007A7C4E /* ThreeWayPattern.m in Sources */,
+				36D6A43116DB004F007A7C4E /* ParallelPattern.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
