@@ -16,5 +16,6 @@
 }
 
 -(id)getAnimation:(BulletNormal*)bullet;
+-(id)getAnimation2:(BulletNormal *)bullet;
 
 @end
