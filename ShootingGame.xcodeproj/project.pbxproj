@@ -628,6 +628,15 @@
 				36D6A41216D93719007A7C4E /* BulletNormal.m */,
 				36D6A42516DAD39E007A7C4E /* Enemy.h */,
 				36D6A42616DAD39F007A7C4E /* Enemy.m */,
+				36D6A45B16DCE5CC007A7C4E /* Item.h */,
+				36D6A45C16DCE5CE007A7C4E /* Item.m */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		36D6A45E16DCF676007A7C4E /* Logic */ = {
+			isa = PBXGroup;
+			children = (
 				36D6A42B16DAFFC5007A7C4E /* BulletPattern.h */,
 				36D6A42C16DB000F007A7C4E /* ThreeWayPattern.h */,
 				36D6A42D16DB0010007A7C4E /* ThreeWayPattern.m */,
@@ -635,10 +644,8 @@
 				36D6A43016DB004E007A7C4E /* ParallelPattern.m */,
 				36D6A43C16DBA89F007A7C4E /* NormalPattern.h */,
 				36D6A43D16DBA8A2007A7C4E /* NormalPattern.m */,
-				36D6A45B16DCE5CC007A7C4E /* Item.h */,
-				36D6A45C16DCE5CE007A7C4E /* Item.m */,
 			);
-			name = Sprites;
+			name = Logic;
 			sourceTree = "<group>";
 		};
 		DC0C49E6154AB4DD00B4B727 = {
@@ -679,6 +686,7 @@
 		DC0C4A07154AB4DD00B4B727 /* cocos2d-2.x-ARC-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				36D6A45E16DCF676007A7C4E /* Logic */,
 				36D6A35416D4EF26007A7C4E /* Sprites */,
 				36D6A34D16D4E89C007A7C4E /* Layers */,
 				DC0C4B78154AB4DF00B4B727 /* AppDelegate.h */,

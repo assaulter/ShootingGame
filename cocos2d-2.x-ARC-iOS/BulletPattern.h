@@ -15,7 +15,7 @@
 @end
 
 @protocol BulletPattern <NSObject>
-@property(nonatomic, assign) id delegate;
+@property(nonatomic, assign) id<BulletPatternDelegate> delegate;
 @required
 -(NSArray*)createBullet:(CGPoint)playerPosition;
 @end

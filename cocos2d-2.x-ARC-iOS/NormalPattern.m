@@ -16,7 +16,7 @@
     BulletNormal *bullet = [[BulletNormal alloc] init];
     
     bullet.position = playerPosition;
-    [self.delegate addChild:bullet];
+    [self.delegate addBulletToLayer:bullet];
     
     bullet.tag = 2;
     
