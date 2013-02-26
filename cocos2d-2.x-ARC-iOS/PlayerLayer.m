@@ -20,7 +20,7 @@
         self.player = [Player new];
         self.player.position = ccp(winSize.width/2, self.player.contentSize.height/2);
         self.bulletPattern = [NormalPattern new];
-        self.bulletPattern.delegate = self;
+        _bulletPattern.delegate = self;
         [self addChild:self.player];
         [self schedule:@selector(addBullet:) interval:1.0f];
     }
@@ -29,7 +29,7 @@
 
 // 実際に弾を撃ってるところ
 -(void)addBullet:(ccTime)dt {
-    NSArray *createdBullets = [self.bulletPattern createBullet:self.player.position];
+    NSArray *createdBullets = [_bulletPattern createBullet:self.player.position];
     for (BulletNormal *bullet in createdBullets) {
         [self.bullets addObject:bullet];
     }
@@ -42,6 +42,11 @@
         [self.bullets removeObject:sprite];
     }
     [self removeChild:sprite cleanup:YES];
+}
+
+-(void)setBulletPattern:(NSObject<BulletPattern> *)bulletPattern {
+    _bulletPattern = bulletPattern;
+    _bulletPattern.delegate = self;
 }
 
 #pragma mark - bulletPatternDelegate

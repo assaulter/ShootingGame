@@ -25,6 +25,7 @@
     id actionMove = [CCMoveTo actionWithDuration:3.0f position:ccp(bullet.position.x, winSize.height + bullet.contentSize.height/2)];
     id actionMoveDone = [CCCallFuncN actionWithTarget:self.delegate selector:@selector(spriteMoveFinished:)];
     
+    [bullet stopAllActions];
     [bullet runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
     NSArray *bullets = [[NSArray alloc] initWithObjects:bullet, nil];
     return bullets;

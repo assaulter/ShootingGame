@@ -35,6 +35,10 @@
     id actionMove3 = [CCMoveTo actionWithDuration:3.0f position:ccp(bullet3.position.x, winSize.height + bullet3.contentSize.height/2)];
     id actionMoveDone = [CCCallFuncN actionWithTarget:self.delegate selector:@selector(spriteMoveFinished:)];
     
+    for (BulletNormal *bullet in bullets) {
+        [bullet stopAllActions];
+    }
+    
     [bullet1 runAction:[CCSequence actions:actionMove1, actionMoveDone, nil]];
     [bullet2 runAction:[CCSequence actions:actionMove2, actionMoveDone, nil]];
     [bullet3 runAction:[CCSequence actions:actionMove3, actionMoveDone, nil]];

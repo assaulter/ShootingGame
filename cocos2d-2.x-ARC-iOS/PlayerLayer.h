@@ -13,10 +13,12 @@
 
 // プレイヤーに関連するものを管理するレイヤー
 @interface PlayerLayer : CCLayer<BulletPatternDelegate> {
+    NSObject<BulletPattern> *_bulletPattern;
 }
 
 @property(nonatomic, strong) Player *player; // player(GameSceneから参照するために)
 @property(nonatomic, strong) NSMutableArray *bullets; // 弾を持つ配列(当たり判定は別クラスでやるので)
-@property(nonatomic, strong) NSObject<BulletPattern> *bulletPattern;
+
+-(void)setBulletPattern:(NSObject<BulletPattern> *)bulletPattern;
 
 @end

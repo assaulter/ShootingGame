@@ -1,9 +1,9 @@
 //
-//  ItemInterface.h
+//  Item.h
 //  ShootingGame
 //
 //  Created by KazukiKubo on 2013/02/26.
-//
+//  Copyright 2013年 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -15,7 +15,10 @@ typedef NS_OPTIONS(NSUInteger, ItemType) {
     ItemTypeThreeWay = 1 << 1,
 };
 
-@protocol ItemInterface <NSObject>
-@required
--(ItemType)getItemType;
+@interface Item : CCSprite {
+    
+}
+
+@property (nonatomic, assign) ItemType type;
+
 @end

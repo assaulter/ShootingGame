@@ -7,8 +7,11 @@
 //
 
 #import "GameScene.h"
-#import "ItemInterface.h"
+#import "Item.h"
 #import "ParallelPattern.h"
+#import "NormalPattern.h"
+#import "ThreeWayPattern.h"
+
 
 @implementation GameScene
 
@@ -68,16 +71,15 @@
     CGRect playerRect = CGRectMake(player.position.x - (player.contentSize.width/2), player.position.y - (player.contentSize.height/2), player.contentSize.width, player.contentSize.height);
     
     // TODO: 同じような制御構文(当たり判定)
-    for (CCSprite *item in _itemLayer.items) {
+    for (Item *item in _itemLayer.items) {
         CGRect itemRect = CGRectMake(item.position.x - (item.contentSize.width/2), item.position.y - (item.contentSize.height/2), item.contentSize.width, item.contentSize.height);
         if (CGRectIntersectsRect(playerRect, itemRect)) { // itemとplayerが接触した。
             [itemsToDelete addObject:item];
-            // playerの状態を変化させる。TODO: おそらく型変換で落ちてる
-            if ([item conformsToProtocol:@protocol(ItemInterface) ]) {
-                [self changeBulletPattern:[(id<ItemInterface>)item getItemType]];
-            }
+            // playerの状態を変化させる。
+            [self changeBulletPattern:item.type];
         }
     }
+
     // 敵と弾の当たり判定
     for (CCSprite *enemy in _enemyLayer.enemies) {
         CGRect enemyRect = CGRectMake(enemy.position.x - (enemy.contentSize.width/2), enemy.position.y - (enemy.contentSize.height/2), enemy.contentSize.width, enemy.contentSize.height);
@@ -110,9 +112,13 @@
 -(void)changeBulletPattern:(ItemType)itemType {
     switch (itemType) {
         case ItemTypeParallel:
-            _playerLayer.bulletPattern = [ParallelPattern new];
+            [_playerLayer setBulletPattern:[ParallelPattern new]];
             break;
-            
+        case ItemTypeNormal:
+            [_playerLayer setBulletPattern:[NormalPattern new]];
+            break;
+        case ItemTypeThreeWay:
+            [_playerLayer setBulletPattern:[ThreeWayPattern new]];
         default:
             break;
     }

@@ -7,7 +7,7 @@
 //
 
 #import "ItemLayer.h"
-#import "ItemParallel.h"
+#import "Item.h"
 
 
 @implementation ItemLayer
@@ -15,14 +15,15 @@
 -(id)init {
     if (self = [super init]) {
         self.items = [NSMutableArray new];
-        [self schedule:@selector(addItem:) interval:10.0f];
+        [self schedule:@selector(addItem:) interval:5.0f];
     }
     return self;
 }
 
 // add items
 -(void)addItem:(ccTime)dt {
-    ItemParallel *item = [ItemParallel new];
+    Item *item = [Item spriteWithFile:@"Parallel.png"];
+    item.type = ItemTypeParallel;
     
     // Determine where to spawn the target along the X axis
     CGSize winSize = [[CCDirector sharedDirector] winSize];
