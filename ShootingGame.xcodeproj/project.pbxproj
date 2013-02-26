@@ -12,7 +12,7 @@
 		36D6A33A16D3948E007A7C4E /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A33916D3948E007A7C4E /* Player.png */; };
 		36D6A34216D42218007A7C4E /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A34116D42218007A7C4E /* Player.m */; };
 		36D6A34416D42639007A7C4E /* Projectile2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A34316D42639007A7C4E /* Projectile2.jpg */; };
-		36D6A34816D4E64A007A7C4E /* PowerUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A34616D4E64A007A7C4E /* PowerUp.png */; };
+		36D6A34816D4E64A007A7C4E /* Parallel.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A34616D4E64A007A7C4E /* Parallel.png */; };
 		36D6A34916D4E64A007A7C4E /* SpeedUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A34716D4E64A007A7C4E /* SpeedUp.png */; };
 		36D6A34C16D4E85A007A7C4E /* PlayerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A34B16D4E85A007A7C4E /* PlayerLayer.m */; };
 		36D6A35016D4EB2E007A7C4E /* GamePadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A34F16D4EB2E007A7C4E /* GamePadLayer.m */; };
@@ -25,6 +25,9 @@
 		36D6A42716DAD39F007A7C4E /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A42616DAD39F007A7C4E /* Enemy.m */; };
 		36D6A42E16DB0010007A7C4E /* ThreeWayPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A42D16DB0010007A7C4E /* ThreeWayPattern.m */; };
 		36D6A43116DB004F007A7C4E /* ParallelPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A43016DB004E007A7C4E /* ParallelPattern.m */; };
+		36D6A43E16DBA8A5007A7C4E /* NormalPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A43D16DBA8A2007A7C4E /* NormalPattern.m */; };
+		36D6A44216DC281F007A7C4E /* ItemThreeWay.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A44116DC281B007A7C4E /* ItemThreeWay.m */; };
+		36D6A44516DC28A4007A7C4E /* ItemParallel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A44416DC28A0007A7C4E /* ItemParallel.m */; };
 		DC0864B815BD8CE60044A820 /* CCNode+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0864B515BD8CE60044A820 /* CCNode+Debug.h */; };
 		DC0864B915BD8CE60044A820 /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B615BD8CE60044A820 /* CCNode+Debug.m */; };
 		DC0864BA15BD8CE60044A820 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B715BD8CE60044A820 /* ccCArray.m */; };
@@ -285,7 +288,7 @@
 		36D6A34016D42218007A7C4E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		36D6A34116D42218007A7C4E /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		36D6A34316D42639007A7C4E /* Projectile2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Projectile2.jpg; sourceTree = "<group>"; };
-		36D6A34616D4E64A007A7C4E /* PowerUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PowerUp.png; sourceTree = "<group>"; };
+		36D6A34616D4E64A007A7C4E /* Parallel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Parallel.png; sourceTree = "<group>"; };
 		36D6A34716D4E64A007A7C4E /* SpeedUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpeedUp.png; sourceTree = "<group>"; };
 		36D6A34A16D4E85A007A7C4E /* PlayerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerLayer.h; sourceTree = "<group>"; };
 		36D6A34B16D4E85A007A7C4E /* PlayerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerLayer.m; sourceTree = "<group>"; };
@@ -310,6 +313,13 @@
 		36D6A42D16DB0010007A7C4E /* ThreeWayPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeWayPattern.m; sourceTree = "<group>"; };
 		36D6A42F16DB004D007A7C4E /* ParallelPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallelPattern.h; sourceTree = "<group>"; };
 		36D6A43016DB004E007A7C4E /* ParallelPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallelPattern.m; sourceTree = "<group>"; };
+		36D6A43C16DBA89F007A7C4E /* NormalPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalPattern.h; sourceTree = "<group>"; };
+		36D6A43D16DBA8A2007A7C4E /* NormalPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalPattern.m; sourceTree = "<group>"; };
+		36D6A43F16DC2686007A7C4E /* ItemInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemInterface.h; sourceTree = "<group>"; };
+		36D6A44016DC2818007A7C4E /* ItemThreeWay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemThreeWay.h; sourceTree = "<group>"; };
+		36D6A44116DC281B007A7C4E /* ItemThreeWay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemThreeWay.m; sourceTree = "<group>"; };
+		36D6A44316DC289D007A7C4E /* ItemParallel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemParallel.h; sourceTree = "<group>"; };
+		36D6A44416DC28A0007A7C4E /* ItemParallel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemParallel.m; sourceTree = "<group>"; };
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
@@ -635,6 +645,13 @@
 				36D6A42D16DB0010007A7C4E /* ThreeWayPattern.m */,
 				36D6A42F16DB004D007A7C4E /* ParallelPattern.h */,
 				36D6A43016DB004E007A7C4E /* ParallelPattern.m */,
+				36D6A43C16DBA89F007A7C4E /* NormalPattern.h */,
+				36D6A43D16DBA8A2007A7C4E /* NormalPattern.m */,
+				36D6A43F16DC2686007A7C4E /* ItemInterface.h */,
+				36D6A44016DC2818007A7C4E /* ItemThreeWay.h */,
+				36D6A44116DC281B007A7C4E /* ItemThreeWay.m */,
+				36D6A44316DC289D007A7C4E /* ItemParallel.h */,
+				36D6A44416DC28A0007A7C4E /* ItemParallel.m */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -692,7 +709,7 @@
 			isa = PBXGroup;
 			children = (
 				36D6A42316DAD385007A7C4E /* Target.png */,
-				36D6A34616D4E64A007A7C4E /* PowerUp.png */,
+				36D6A34616D4E64A007A7C4E /* Parallel.png */,
 				36D6A34716D4E64A007A7C4E /* SpeedUp.png */,
 				36D6A34316D42639007A7C4E /* Projectile2.jpg */,
 				36D6A33916D3948E007A7C4E /* Player.png */,
@@ -1273,7 +1290,7 @@
 				362B3B6116D37F01005A5872 /* Default-568h@2x.png in Resources */,
 				36D6A33A16D3948E007A7C4E /* Player.png in Resources */,
 				36D6A34416D42639007A7C4E /* Projectile2.jpg in Resources */,
-				36D6A34816D4E64A007A7C4E /* PowerUp.png in Resources */,
+				36D6A34816D4E64A007A7C4E /* Parallel.png in Resources */,
 				36D6A34916D4E64A007A7C4E /* SpeedUp.png in Resources */,
 				36D6A42416DAD385007A7C4E /* Target.png in Resources */,
 			);
@@ -1300,6 +1317,9 @@
 				36D6A42716DAD39F007A7C4E /* Enemy.m in Sources */,
 				36D6A42E16DB0010007A7C4E /* ThreeWayPattern.m in Sources */,
 				36D6A43116DB004F007A7C4E /* ParallelPattern.m in Sources */,
+				36D6A43E16DBA8A5007A7C4E /* NormalPattern.m in Sources */,
+				36D6A44216DC281F007A7C4E /* ItemThreeWay.m in Sources */,
+				36D6A44516DC28A4007A7C4E /* ItemParallel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

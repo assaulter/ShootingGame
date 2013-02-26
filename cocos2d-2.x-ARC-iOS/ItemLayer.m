@@ -7,7 +7,7 @@
 //
 
 #import "ItemLayer.h"
-#import "PowerUpItem.h"
+#import "ItemParallel.h"
 
 
 @implementation ItemLayer
@@ -22,7 +22,7 @@
 
 // add items
 -(void)addItem:(ccTime)dt {
-    PowerUpItem *item = [PowerUpItem new];
+    ItemParallel *item = [ItemParallel new];
     
     // Determine where to spawn the target along the X axis
     CGSize winSize = [[CCDirector sharedDirector] winSize];

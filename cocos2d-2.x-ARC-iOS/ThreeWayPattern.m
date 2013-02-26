@@ -8,25 +8,37 @@
 
 #import "ThreeWayPattern.h"
 
+const float DURATION = 3.0f;
+const int TAG = 2;
+
 @implementation ThreeWayPattern
 
 @synthesize delegate;
 
--(BulletNormal*)addBullet:(CGPoint)playerPosition {
-    BulletNormal *bullet = [[BulletNormal alloc] init];
+-(NSArray*)createBullet:(CGPoint)playerPosition {
+    BulletNormal *bullet1 = [[BulletNormal alloc] init];
+    BulletNormal *bullet2 = [[BulletNormal alloc] init];
+    BulletNormal *bullet3 = [[BulletNormal alloc] init];
     
-    bullet.position = playerPosition;
-    [self.delegate addChild:bullet];
+    NSArray *bullets = [[NSArray alloc] initWithObjects:bullet1, bullet2, bullet3, nil];
     
-    bullet.tag = 2;
+    for (BulletNormal *bullet in bullets) {
+        bullet.position = playerPosition;
+        bullet.tag = TAG;
+        [self.delegate addBulletToLayer:bullet];
+    }
     
     // create actions
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    id actionMove = [CCMoveTo actionWithDuration:5.0f position:ccp(bullet.position.x, winSize.height + bullet.contentSize.height/2)];
+    id actionMove1 = [CCMoveTo actionWithDuration:DURATION position:ccp(bullet1.position.x, winSize.height + bullet1.contentSize.height/2)];
+    id actionMove2 = [CCMoveTo actionWithDuration:DURATION position:ccp(bullet2.position.x + bullet2.contentSize.width * 3, winSize.height + bullet2.contentSize.height/2)];
+    id actionMove3 = [CCMoveTo actionWithDuration:DURATION position:ccp(bullet3.position.x - bullet3.contentSize.width * 3, winSize.height + bullet3.contentSize.height/2)];
     id actionMoveDone = [CCCallFuncN actionWithTarget:self.delegate selector:@selector(spriteMoveFinished:)];
     
-    [bullet runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
-    return bullet;
+    [bullet1 runAction:[CCSequence actions:actionMove1, actionMoveDone, nil]];
+    [bullet2 runAction:[CCSequence actions:actionMove2, actionMoveDone, nil]];
+    [bullet3 runAction:[CCSequence actions:actionMove3, actionMoveDone, nil]];
+    return bullets;
 }
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "GameScene.h"
+#import "ItemInterface.h"
+#import "ParallelPattern.h"
 
 @implementation GameScene
 
@@ -70,8 +72,10 @@
         CGRect itemRect = CGRectMake(item.position.x - (item.contentSize.width/2), item.position.y - (item.contentSize.height/2), item.contentSize.width, item.contentSize.height);
         if (CGRectIntersectsRect(playerRect, itemRect)) { // itemとplayerが接触した。
             [itemsToDelete addObject:item];
-            // playerの状態を変化させる。
-            player.scale += 0.1f;
+            // playerの状態を変化させる。TODO: おそらく型変換で落ちてる
+            if ([item conformsToProtocol:@protocol(ItemInterface) ]) {
+                [self changeBulletPattern:[(id<ItemInterface>)item getItemType]];
+            }
         }
     }
     // 敵と弾の当たり判定
@@ -100,6 +104,17 @@
     for (CCSprite *bullet in itemsToDelete) {
         [_playerLayer.bullets removeObject:bullet];
         [_playerLayer removeChild:bullet cleanup:YES];
+    }
+}
+
+-(void)changeBulletPattern:(ItemType)itemType {
+    switch (itemType) {
+        case ItemTypeParallel:
+            _playerLayer.bulletPattern = [ParallelPattern new];
+            break;
+            
+        default:
+            break;
     }
 }
 

@@ -7,8 +7,9 @@
 //
 
 #import "PlayerLayer.h"
+// TODO: 次は弾のインタフェースを作ろう
 #import "BulletNormal.h"
-
+#import "NormalPattern.h" // デフォルトの発射パターン
 
 @implementation PlayerLayer
 
@@ -18,43 +19,20 @@
         self.bullets = [NSMutableArray new];
         self.player = [Player new];
         self.player.position = ccp(winSize.width/2, self.player.contentSize.height/2);
-        self.strategy = [ConcreteStrategy new];
-        self.threeWay = [ThreeWayPattern new];
-        self.threeWay.delegate = self;
+        self.bulletPattern = [NormalPattern new];
+        self.bulletPattern.delegate = self;
         [self addChild:self.player];
         [self schedule:@selector(addBullet:) interval:1.0f];
     }
     return self;
 }
 
-// add bullets
+// 実際に弾を撃ってるところ
 -(void)addBullet:(ccTime)dt {
-    // TODO: 早くもコピペっぽいのが。要リファクタ。(現時点だと、弾の種類を変えると、ここを全部書き換える必要がある)
-    
-    [_bullets addObject:[self.threeWay addBullet:self.player.position]] ;
-    
-//    BulletNormal *bullet = [[BulletNormal alloc] init];
-//    BulletNormal *bullet2 = [[BulletNormal alloc] init];
-//    
-//    bullet.position = self.player.position;
-//    bullet2.position = ccp(self.player.position.x + bullet2.contentSize.width * 4, self.player.position.y);
-//    [self addChild:bullet];
-//    [self addChild:bullet2];
-//    
-//    bullet.tag = 2;
-//    bullet2.tag = 2;
-//    [_bullets addObject:bullet];
-//    [_bullets addObject:bullet2];
-//    
-//    // create actions
-////    id actionMove = [CCMoveTo actionWithDuration:5.0f position:ccp(bullet.position.x, winSize.height + bullet.contentSize.height/2)];
-//    id acitonMove = [self.strategy getAnimation:bullet];
-//    id actionMoveDone = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveFinished:)];
-//    
-//    [bullet runAction:[CCSequence actions:acitonMove, actionMoveDone, nil]];
-//    
-//    id actionMove2 = [self.strategy getAnimation2:bullet2];
-//    [bullet2 runAction:[CCSequence actions:actionMove2, actionMoveDone, nil]];
+    NSArray *createdBullets = [self.bulletPattern createBullet:self.player.position];
+    for (BulletNormal *bullet in createdBullets) {
+        [self.bullets addObject:bullet];
+    }
 }
 
 // アニメーションが終了した時の処理 = 画面から消えたとき
@@ -66,6 +44,7 @@
     [self removeChild:sprite cleanup:YES];
 }
 
+#pragma mark - bulletPatternDelegate
 -(void)addBulletToLayer:(BulletNormal*)bullet {
     [self addChild:bullet];
 }
