@@ -17,9 +17,7 @@
 		36D6A34C16D4E85A007A7C4E /* PlayerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A34B16D4E85A007A7C4E /* PlayerLayer.m */; };
 		36D6A35016D4EB2E007A7C4E /* GamePadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A34F16D4EB2E007A7C4E /* GamePadLayer.m */; };
 		36D6A35316D4EC4A007A7C4E /* ItemLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A35216D4EC4A007A7C4E /* ItemLayer.m */; };
-		36D6A35716D4EF53007A7C4E /* PowerUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A35616D4EF53007A7C4E /* PowerUpItem.m */; };
 		36D6A41316D93719007A7C4E /* BulletNormal.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A41216D93719007A7C4E /* BulletNormal.m */; };
-		36D6A41C16D93DA0007A7C4E /* ConcreteStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A41B16D93D9F007A7C4E /* ConcreteStrategy.m */; };
 		36D6A42216DAD2FB007A7C4E /* EnemyLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A42116DAD2FB007A7C4E /* EnemyLayer.m */; };
 		36D6A42416DAD385007A7C4E /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A42316DAD385007A7C4E /* Target.png */; };
 		36D6A42716DAD39F007A7C4E /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A42616DAD39F007A7C4E /* Enemy.m */; };
@@ -297,13 +295,8 @@
 		36D6A34F16D4EB2E007A7C4E /* GamePadLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePadLayer.m; sourceTree = "<group>"; };
 		36D6A35116D4EC4A007A7C4E /* ItemLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemLayer.h; sourceTree = "<group>"; };
 		36D6A35216D4EC4A007A7C4E /* ItemLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemLayer.m; sourceTree = "<group>"; };
-		36D6A35516D4EF53007A7C4E /* PowerUpItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerUpItem.h; sourceTree = "<group>"; };
-		36D6A35616D4EF53007A7C4E /* PowerUpItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerUpItem.m; sourceTree = "<group>"; };
 		36D6A41116D93719007A7C4E /* BulletNormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletNormal.h; sourceTree = "<group>"; };
 		36D6A41216D93719007A7C4E /* BulletNormal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletNormal.m; sourceTree = "<group>"; };
-		36D6A41416D93738007A7C4E /* BulletStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletStrategy.h; sourceTree = "<group>"; };
-		36D6A41A16D93D9F007A7C4E /* ConcreteStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcreteStrategy.h; sourceTree = "<group>"; };
-		36D6A41B16D93D9F007A7C4E /* ConcreteStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConcreteStrategy.m; sourceTree = "<group>"; };
 		36D6A42016DAD2FA007A7C4E /* EnemyLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyLayer.h; sourceTree = "<group>"; };
 		36D6A42116DAD2FB007A7C4E /* EnemyLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyLayer.m; sourceTree = "<group>"; };
 		36D6A42316DAD385007A7C4E /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target.png; sourceTree = "<group>"; };
@@ -631,13 +624,8 @@
 			children = (
 				36D6A34016D42218007A7C4E /* Player.h */,
 				36D6A34116D42218007A7C4E /* Player.m */,
-				36D6A35516D4EF53007A7C4E /* PowerUpItem.h */,
-				36D6A35616D4EF53007A7C4E /* PowerUpItem.m */,
 				36D6A41116D93719007A7C4E /* BulletNormal.h */,
 				36D6A41216D93719007A7C4E /* BulletNormal.m */,
-				36D6A41416D93738007A7C4E /* BulletStrategy.h */,
-				36D6A41A16D93D9F007A7C4E /* ConcreteStrategy.h */,
-				36D6A41B16D93D9F007A7C4E /* ConcreteStrategy.m */,
 				36D6A42516DAD39E007A7C4E /* Enemy.h */,
 				36D6A42616DAD39F007A7C4E /* Enemy.m */,
 				36D6A42B16DAFFC5007A7C4E /* BulletPattern.h */,
@@ -1311,9 +1299,7 @@
 				36D6A34C16D4E85A007A7C4E /* PlayerLayer.m in Sources */,
 				36D6A35016D4EB2E007A7C4E /* GamePadLayer.m in Sources */,
 				36D6A35316D4EC4A007A7C4E /* ItemLayer.m in Sources */,
-				36D6A35716D4EF53007A7C4E /* PowerUpItem.m in Sources */,
 				36D6A41316D93719007A7C4E /* BulletNormal.m in Sources */,
-				36D6A41C16D93DA0007A7C4E /* ConcreteStrategy.m in Sources */,
 				36D6A42216DAD2FB007A7C4E /* EnemyLayer.m in Sources */,
 				36D6A42716DAD39F007A7C4E /* Enemy.m in Sources */,
 				36D6A42E16DB0010007A7C4E /* ThreeWayPattern.m in Sources */,
