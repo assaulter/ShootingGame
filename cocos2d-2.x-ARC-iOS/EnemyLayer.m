@@ -34,7 +34,7 @@
     [self addChild:enemy];
     
     // save item to MutableArray
-    enemy.tag = 1;
+    enemy.tag = 3;
     [self.enemies addObject:enemy];
     
     // create actions
@@ -48,7 +48,7 @@
 // アニメーションが終了した時の処理 = 画面から消えたとき
 -(void)spriteMoveFinished:(id)sender {
     CCSprite *sprite = (CCSprite *)sender;
-    if (sprite.tag == 1) {
+    if (sprite.tag == 3) {
         [self.enemies removeObject:sprite];
     }
     [self removeChild:sprite cleanup:YES];

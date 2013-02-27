@@ -91,24 +91,22 @@
             }
         }
     }
-    
-    // TODO: 同じような制御構文(削除方法)
-    for (CCSprite *item in itemsToDelete) {
-        [_itemLayer.items removeObject:item];
-        [_itemLayer removeChild:item cleanup:YES];
-    }
-    
-    for (CCSprite *enemy in itemsToDelete) {
-        [_enemyLayer.enemies removeObject:enemy];
-        [_enemyLayer removeChild:enemy cleanup:YES];
-    }
-    
-    for (CCSprite *bullet in itemsToDelete) {
-        [_playerLayer.bullets removeObject:bullet];
-        [_playerLayer removeChild:bullet cleanup:YES];
+    // あたったやつは削除
+    for (CCSprite *sprite in itemsToDelete) {
+        if (sprite.tag == 1) {
+            [_itemLayer.items removeObject:sprite];
+            [_itemLayer removeChild:sprite cleanup:YES];
+        } else if (sprite.tag == 2) {
+            [_playerLayer.bullets removeObject:sprite];
+            [_playerLayer removeChild:sprite cleanup:YES];
+        } else if (sprite.tag == 3) {
+            [_enemyLayer.enemies removeObject:sprite];
+            [_enemyLayer removeChild:sprite cleanup:YES];
+        }
     }
 }
 
+// 弾の発射
 -(void)changeBulletPattern:(ItemType)itemType {
     switch (itemType) {
         case ItemTypeParallel:

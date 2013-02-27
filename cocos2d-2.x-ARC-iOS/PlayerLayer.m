@@ -44,7 +44,8 @@
     [self removeChild:sprite cleanup:YES];
 }
 
--(void)setBulletPattern:(NSObject<BulletPattern> *)bulletPattern {
+// 状態を設定してもらう。
+-(void)setBulletPattern:(NSObject<BulletPattern>*)bulletPattern {
     _bulletPattern = bulletPattern;
     _bulletPattern.delegate = self;
 }
