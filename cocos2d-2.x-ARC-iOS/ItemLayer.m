@@ -9,6 +9,7 @@
 #import "ItemLayer.h"
 #import "Item.h"
 
+static const int TAG_ITEM = 1;
 
 @implementation ItemLayer
 
@@ -36,7 +37,7 @@
     [self addChild:item];
     
     // save item to MutableArray
-    item.tag = 1;
+    item.tag = TAG_ITEM;
     [self.items addObject:item];
     
     // create actions
@@ -50,7 +51,7 @@
 // アニメーションが終了した時の処理 = 画面から消えたとき
 -(void)spriteMoveFinished:(id)sender {
     CCSprite *sprite = (CCSprite *)sender;
-    if (sprite.tag == 1) {
+    if (sprite.tag == TAG_ITEM) {
         [self.items removeObject:sprite];
     }
     [self removeChild:sprite cleanup:YES];

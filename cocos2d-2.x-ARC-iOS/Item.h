@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-typedef NS_OPTIONS(NSUInteger, ItemType) {
-    ItemTypeNormal   = 0,
-    ItemTypeParallel = 1 << 0,
-    ItemTypeThreeWay = 1 << 1,
+typedef NS_ENUM(NSUInteger, ItemType) {
+    ItemTypeNormal = 0,
+    ItemTypeParallel,
+    ItemTypeThreeWay,
 };
 
 @interface Item : CCSprite {
