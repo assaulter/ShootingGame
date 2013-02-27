@@ -65,7 +65,7 @@
         [self movePlayer];
     }
     
-    NSMutableArray *itemsToDelete = [NSMutableArray new];
+    NSMutableArray *spritesToDelete = [NSMutableArray new];
     Player *player = _playerLayer.player;
     
     CGRect playerRect = CGRectMake(player.position.x - (player.contentSize.width/2), player.position.y - (player.contentSize.height/2), player.contentSize.width, player.contentSize.height);
@@ -74,7 +74,7 @@
     for (Item *item in _itemLayer.items) {
         CGRect itemRect = CGRectMake(item.position.x - (item.contentSize.width/2), item.position.y - (item.contentSize.height/2), item.contentSize.width, item.contentSize.height);
         if (CGRectIntersectsRect(playerRect, itemRect)) { // itemとplayerが接触した。
-            [itemsToDelete addObject:item];
+            [spritesToDelete addObject:item];
             // playerの状態を変化させる。
             [self changeBulletPattern:item.type];
         }
@@ -86,22 +86,33 @@
         for (CCSprite *bullet in _playerLayer.bullets) {
             CGRect bulletRect = CGRectMake(bullet.position.x - (bullet.contentSize.width/2), bullet.position.y - (bullet.contentSize.height/2), bullet.contentSize.width, bullet.contentSize.height);
             if (CGRectIntersectsRect(enemyRect, bulletRect)) {
-                [itemsToDelete addObject:enemy];
-                [itemsToDelete addObject:bullet];
+                [spritesToDelete addObject:enemy];
+                [spritesToDelete addObject:bullet];
             }
         }
     }
     // あたったやつは削除
-    for (CCSprite *sprite in itemsToDelete) {
-        if (sprite.tag == 1) {
-            [_itemLayer.items removeObject:sprite];
-            [_itemLayer removeChild:sprite cleanup:YES];
-        } else if (sprite.tag == 2) {
-            [_playerLayer.bullets removeObject:sprite];
-            [_playerLayer removeChild:sprite cleanup:YES];
-        } else if (sprite.tag == 3) {
-            [_enemyLayer.enemies removeObject:sprite];
-            [_enemyLayer removeChild:sprite cleanup:YES];
+    [self deleteSprites:spritesToDelete];
+}
+
+// 削除用バッファからtagごとに削除を行う。
+-(void)deleteSprites:(NSMutableArray*)sprites {
+    for (CCSprite *sprite in sprites) {
+        switch (sprite.tag) {
+            case SpriteTagsItem:
+                [_itemLayer.items removeObject:sprite];
+                [_itemLayer removeChild:sprite cleanup:YES];
+                break;
+            case SpriteTagsBullet:
+                [_playerLayer.bullets removeObject:sprite];
+                [_playerLayer removeChild:sprite cleanup:YES];
+                break;
+            case SpriteTagsEnemy:
+                [_enemyLayer.enemies removeObject:sprite];
+                [_enemyLayer removeChild:sprite cleanup:YES];
+                break;
+            default:
+                break;
         }
     }
 }

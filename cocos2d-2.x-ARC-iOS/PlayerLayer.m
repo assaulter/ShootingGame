@@ -11,8 +11,6 @@
 #import "BulletNormal.h"
 #import "NormalPattern.h" // デフォルトの発射パターン
 
-static const int TAG_BULLET = 2;
-
 @implementation PlayerLayer
 
 -(id)init {
@@ -40,7 +38,7 @@ static const int TAG_BULLET = 2;
 // アニメーションが終了した時の処理 = 画面から消えたとき(bulletPatternから呼ばれる)
 -(void)spriteMoveFinished:(id)sender {
     CCSprite *sprite = (CCSprite *)sender;
-    if (sprite.tag == TAG_BULLET) {
+    if (sprite.tag == SpriteTagsBullet) {
         [self.bullets removeObject:sprite];
     }
     [self removeChild:sprite cleanup:YES];

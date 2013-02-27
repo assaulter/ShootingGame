@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "SpriteTag.h"
 
 typedef NS_ENUM(NSUInteger, ItemType) {
     ItemTypeNormal = 0,

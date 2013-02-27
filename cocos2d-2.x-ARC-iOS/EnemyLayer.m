@@ -9,8 +9,6 @@
 #import "EnemyLayer.h"
 #import "Enemy.h"
 
-static const int TAG_ENEMY = 3;
-
 @implementation EnemyLayer
 
 -(id)init {
@@ -36,7 +34,7 @@ static const int TAG_ENEMY = 3;
     [self addChild:enemy];
     
     // save item to MutableArray
-    enemy.tag = TAG_ENEMY;
+    enemy.tag = SpriteTagsEnemy;
     [self.enemies addObject:enemy];
     
     // create actions
@@ -50,7 +48,7 @@ static const int TAG_ENEMY = 3;
 // アニメーションが終了した時の処理 = 画面から消えたとき
 -(void)spriteMoveFinished:(id)sender {
     CCSprite *sprite = (CCSprite *)sender;
-    if (sprite.tag == TAG_ENEMY) {
+    if (sprite.tag == SpriteTagsEnemy) {
         [self.enemies removeObject:sprite];
     }
     [self removeChild:sprite cleanup:YES];
