@@ -23,7 +23,7 @@
     
     for (BulletNormal *bullet in bullets) {
         bullet.position = ccp(playerPosition.x + (space * i), playerPosition.y);
-        bullet.tag = 2;
+        bullet.tag = SpriteTagsBullet;
         [self.delegate addBulletToLayer:bullet];
         i++;
     }

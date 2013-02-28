@@ -9,7 +9,6 @@
 #import "ThreeWayPattern.h"
 
 const float DURATION = 3.0f;
-const int TAG = 2;
 
 @implementation ThreeWayPattern
 
@@ -24,7 +23,7 @@ const int TAG = 2;
     
     for (BulletNormal *bullet in bullets) {
         bullet.position = playerPosition;
-        bullet.tag = TAG;
+        bullet.tag = SpriteTagsBullet;
         [self.delegate addBulletToLayer:bullet];
     }
     

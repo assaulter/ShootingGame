@@ -11,6 +11,7 @@
 #import "ParallelPattern.h"
 #import "NormalPattern.h"
 #import "ThreeWayPattern.h"
+#import "CollisionDetector.h"
 
 
 @implementation GameScene
@@ -64,28 +65,20 @@
     if (_gamePadLayer.isTouches) {
         [self movePlayer];
     }
-    
     NSMutableArray *spritesToDelete = [NSMutableArray new];
     Player *player = _playerLayer.player;
-    
-    CGRect playerRect = CGRectMake(player.position.x - (player.contentSize.width/2), player.position.y - (player.contentSize.height/2), player.contentSize.width, player.contentSize.height);
-    
-    // TODO: 同じような制御構文(当たり判定)
+    // itemとplayerの当たり判定
     for (Item *item in _itemLayer.items) {
-        CGRect itemRect = CGRectMake(item.position.x - (item.contentSize.width/2), item.position.y - (item.contentSize.height/2), item.contentSize.width, item.contentSize.height);
-        if (CGRectIntersectsRect(playerRect, itemRect)) { // itemとplayerが接触した。
+        if ([CollisionDetector isCollided:player item:item]) {
             [spritesToDelete addObject:item];
             // playerの状態を変化させる。
             [self changeBulletPattern:item.type];
         }
     }
-
     // 敵と弾の当たり判定
     for (CCSprite *enemy in _enemyLayer.enemies) {
-        CGRect enemyRect = CGRectMake(enemy.position.x - (enemy.contentSize.width/2), enemy.position.y - (enemy.contentSize.height/2), enemy.contentSize.width, enemy.contentSize.height);
         for (CCSprite *bullet in _playerLayer.bullets) {
-            CGRect bulletRect = CGRectMake(bullet.position.x - (bullet.contentSize.width/2), bullet.position.y - (bullet.contentSize.height/2), bullet.contentSize.width, bullet.contentSize.height);
-            if (CGRectIntersectsRect(enemyRect, bulletRect)) {
+            if ([CollisionDetector isCollided:enemy sprite:bullet]) {
                 [spritesToDelete addObject:enemy];
                 [spritesToDelete addObject:bullet];
             }

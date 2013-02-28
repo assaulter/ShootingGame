@@ -18,7 +18,7 @@
     bullet.position = playerPosition;
     [self.delegate addBulletToLayer:bullet];
     
-    bullet.tag = 2;
+    bullet.tag = SpriteTagsBullet;
     
     // create actions
     CGSize winSize = [[CCDirector sharedDirector] winSize];
