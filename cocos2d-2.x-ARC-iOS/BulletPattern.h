@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BulletNormal.h"
+#import "BulletClone.h"
 
 @protocol BulletPatternDelegate <NSObject>
 @required
@@ -16,6 +17,7 @@
 
 @protocol BulletPattern <NSObject>
 @property(nonatomic, assign) id<BulletPatternDelegate> delegate;
+
 @required
 -(NSArray*)createBullet:(CGPoint)playerPosition;
 @end

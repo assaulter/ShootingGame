@@ -8,7 +8,6 @@
 
 #import "Enemy.h"
 
-
 @implementation Enemy
 
 -(id)init {

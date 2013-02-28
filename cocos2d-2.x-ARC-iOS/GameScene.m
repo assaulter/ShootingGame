@@ -12,6 +12,7 @@
 #import "NormalPattern.h"
 #import "ThreeWayPattern.h"
 #import "CollisionDetector.h"
+#import "NextStage.h"
 
 
 @implementation GameScene
@@ -124,6 +125,12 @@
         default:
             break;
     }
+}
+
+// 次のステージへ移動する。
+-(void)goToNextStage {
+    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[NextStage scene] withColor:ccc3(255, 255, 255)];
+    [[CCDirector sharedDirector]replaceScene:tran];
 }
 
 @end

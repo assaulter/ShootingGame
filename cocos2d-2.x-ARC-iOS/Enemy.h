@@ -14,4 +14,8 @@
     
 }
 
+//@property(nonatomic, assign) int lifePoint;
+//
+//-(void)deadAction;
+
 @end

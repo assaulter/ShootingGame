@@ -14,6 +14,7 @@
 // プレイヤーに関連するものを管理するレイヤー
 @interface PlayerLayer : CCLayer<BulletPatternDelegate> {
     NSObject<BulletPattern> *_bulletPattern;
+    BulletClone *_bulletClone;
 }
 
 @property(nonatomic, strong) Player *player; // player(GameSceneから参照するために)
