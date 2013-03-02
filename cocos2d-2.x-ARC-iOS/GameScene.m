@@ -82,6 +82,7 @@
             if ([CollisionDetector isCollided:enemy sprite:bullet]) {
                 [spritesToDelete addObject:enemy];
                 [spritesToDelete addObject:bullet];
+                [_itemLayer addItemWithEnemyPosition:enemy.position];
             }
         }
     }

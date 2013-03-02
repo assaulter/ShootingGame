@@ -14,24 +14,25 @@
 -(id)init {
     if (self = [super init]) {
         self.items = [NSMutableArray new];
-        [self schedule:@selector(addItem:) interval:5.0f];
+        _itemTypes = [self setTypesToArray];
+//        [self schedule:@selector(addItem:) interval:5.0f];
     }
     return self;
 }
 
-// add items
--(void)addItem:(ccTime)dt {
-    Item *item = [Item spriteWithFile:@"Parallel.png"];
-    item.type = ItemTypeParallel;
+//TODO: type増やしたらここも書き換えないといけない・・・
+-(NSMutableArray*)setTypesToArray {
+    NSNumber *normal = [NSNumber numberWithInt:ItemTypeNormal];
+    NSNumber *parallel = [NSNumber numberWithInt:ItemTypeParallel];
+    NSNumber *threeway = [NSNumber numberWithInt:ItemTypeThreeWay];
     
-    // Determine where to spawn the target along the X axis
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    int minX = item.contentSize.width/2;
-    int maxX = winSize.width - minX;
-    int rangeX = maxX - minX;
-    int actualX = (arc4random() % rangeX) + minX;
-    
-    item.position = ccp(actualX, winSize.height + (item.contentSize.height/2));
+    return [[NSMutableArray alloc] initWithObjects:normal, parallel, threeway, nil];
+}
+
+// add item with enemyPosition
+-(void)addItemWithEnemyPosition:(CGPoint)position {
+    Item *item = [self getItemWithType:[self getItemTypeRand]];
+    item.position = position;
     [self addChild:item];
     
     // save item to MutableArray
@@ -40,10 +41,43 @@
     
     // create actions
     id actionMove = [CCMoveTo actionWithDuration:10.0f
-                                        position:ccp(actualX, -item.contentSize.height/2)];
+                                        position:ccp(position.x, -item.contentSize.height/2)];
     id actionMoveDone = [CCCallFuncN actionWithTarget:self
                                              selector:@selector(spriteMoveFinished:)];
     [item runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
+}
+
+-(ItemType)getItemType:(int)number {
+    ItemType type = [[_itemTypes objectAtIndex:number] intValue];
+    return type;
+}
+
+// randamなitemTypeを返すメソッド
+-(ItemType)getItemTypeRand {
+    ItemType type = [self getItemType:(arc4random() % [_itemTypes count])];
+    return type;
+}
+
+// typeに応じたitemを生成する。
+-(Item*)getItemWithType:(ItemType)type {
+    Item *item;
+    switch (type) {
+        case ItemTypeNormal:
+            item = [Item spriteWithFile:@"Normal.png"];
+            item.type = type;
+            break;
+        case ItemTypeParallel:
+            item =  [Item spriteWithFile:@"Parallel.png"];
+            item.type = type;
+            break;
+        case ItemTypeThreeWay:
+            item = [Item spriteWithFile:@"Threeway.png"];
+            item.type = type;
+            break;
+        default:
+            break;
+    }
+    return item;
 }
 
 // アニメーションが終了した時の処理 = 画面から消えたとき

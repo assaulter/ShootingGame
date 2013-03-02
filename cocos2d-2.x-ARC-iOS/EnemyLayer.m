@@ -40,6 +40,7 @@
     // create actions
     id actionMove = [CCMoveTo actionWithDuration:5.0f
                                         position:ccp(actualX, -enemy.contentSize.height/2)];
+    
     id actionMoveDone = [CCCallFuncN actionWithTarget:self
                                              selector:@selector(spriteMoveFinished:)];
     [enemy runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];

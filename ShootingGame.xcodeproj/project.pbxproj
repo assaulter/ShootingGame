@@ -12,7 +12,7 @@
 		367B43B416DEC63F003DB23F /* SpriteTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 367B43B316DEC63F003DB23F /* SpriteTag.m */; };
 		367B43B716DECC71003DB23F /* CollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 367B43B616DECC71003DB23F /* CollisionDetector.m */; };
 		367B43BD16DEDCCB003DB23F /* NextStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 367B43BC16DEDCCA003DB23F /* NextStage.m */; };
-		367B43C416DF9767003DB23F /* BulletClone.m in Sources */ = {isa = PBXBuildFile; fileRef = 367B43C316DF9767003DB23F /* BulletClone.m */; };
+		36AFFE0716E0E9BC00AD0035 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AFFE0616E0E9BC00AD0035 /* MainScene.m */; };
 		36D6A33A16D3948E007A7C4E /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A33916D3948E007A7C4E /* Player.png */; };
 		36D6A34216D42218007A7C4E /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A34116D42218007A7C4E /* Player.m */; };
 		36D6A34416D42639007A7C4E /* Projectile2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A34316D42639007A7C4E /* Projectile2.jpg */; };
@@ -293,10 +293,10 @@
 		367B43B616DECC71003DB23F /* CollisionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionDetector.m; sourceTree = "<group>"; };
 		367B43BB16DEDCCA003DB23F /* NextStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextStage.h; sourceTree = "<group>"; };
 		367B43BC16DEDCCA003DB23F /* NextStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextStage.m; sourceTree = "<group>"; };
-		367B43C016DF9636003DB23F /* EnemyPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPrototype.h; sourceTree = "<group>"; };
-		367B43C116DF973D003DB23F /* BulletPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletPrototype.h; sourceTree = "<group>"; };
-		367B43C216DF9767003DB23F /* BulletClone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletClone.h; sourceTree = "<group>"; };
-		367B43C316DF9767003DB23F /* BulletClone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletClone.m; sourceTree = "<group>"; };
+		36AFFE0516E0E9BC00AD0035 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		36AFFE0616E0E9BC00AD0035 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
+		36AFFE0F16E2333F00AD0035 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		36AFFE9716E2392E00AD0035 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		36D6A33916D3948E007A7C4E /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
 		36D6A34016D42218007A7C4E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		36D6A34116D42218007A7C4E /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
@@ -616,11 +616,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		36D6A34D16D4E89C007A7C4E /* Layers */ = {
+		36AFFE0116E0D88F00AD0035 /* BulletCreatePattern */ = {
+			isa = PBXGroup;
+			children = (
+				36D6A42B16DAFFC5007A7C4E /* BulletPattern.h */,
+				36D6A42C16DB000F007A7C4E /* ThreeWayPattern.h */,
+				36D6A42D16DB0010007A7C4E /* ThreeWayPattern.m */,
+				36D6A42F16DB004D007A7C4E /* ParallelPattern.h */,
+				36D6A43016DB004E007A7C4E /* ParallelPattern.m */,
+				36D6A43C16DBA89F007A7C4E /* NormalPattern.h */,
+				36D6A43D16DBA8A2007A7C4E /* NormalPattern.m */,
+			);
+			name = BulletCreatePattern;
+			sourceTree = "<group>";
+		};
+		36AFFE0816E2290A00AD0035 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				362B3B5D16D3785C005A5872 /* GameScene.h */,
 				362B3B5E16D3785C005A5872 /* GameScene.m */,
+				367B43BB16DEDCCA003DB23F /* NextStage.h */,
+				367B43BC16DEDCCA003DB23F /* NextStage.m */,
+				36AFFE0516E0E9BC00AD0035 /* MainScene.h */,
+				36AFFE0616E0E9BC00AD0035 /* MainScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		36D6A34D16D4E89C007A7C4E /* Layers */ = {
+			isa = PBXGroup;
+			children = (
 				36D6A34A16D4E85A007A7C4E /* PlayerLayer.h */,
 				36D6A34B16D4E85A007A7C4E /* PlayerLayer.m */,
 				36D6A34E16D4EB2E007A7C4E /* GamePadLayer.h */,
@@ -629,8 +654,6 @@
 				36D6A35216D4EC4A007A7C4E /* ItemLayer.m */,
 				36D6A42016DAD2FA007A7C4E /* EnemyLayer.h */,
 				36D6A42116DAD2FB007A7C4E /* EnemyLayer.m */,
-				367B43BB16DEDCCA003DB23F /* NextStage.h */,
-				367B43BC16DEDCCA003DB23F /* NextStage.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -648,10 +671,6 @@
 				36D6A45C16DCE5CE007A7C4E /* Item.m */,
 				367B43B216DEC63F003DB23F /* SpriteTag.h */,
 				367B43B316DEC63F003DB23F /* SpriteTag.m */,
-				367B43C016DF9636003DB23F /* EnemyPrototype.h */,
-				367B43C116DF973D003DB23F /* BulletPrototype.h */,
-				367B43C216DF9767003DB23F /* BulletClone.h */,
-				367B43C316DF9767003DB23F /* BulletClone.m */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -659,13 +678,6 @@
 		36D6A45E16DCF676007A7C4E /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				36D6A42B16DAFFC5007A7C4E /* BulletPattern.h */,
-				36D6A42C16DB000F007A7C4E /* ThreeWayPattern.h */,
-				36D6A42D16DB0010007A7C4E /* ThreeWayPattern.m */,
-				36D6A42F16DB004D007A7C4E /* ParallelPattern.h */,
-				36D6A43016DB004E007A7C4E /* ParallelPattern.m */,
-				36D6A43C16DBA89F007A7C4E /* NormalPattern.h */,
-				36D6A43D16DBA8A2007A7C4E /* NormalPattern.m */,
 				367B43B516DECC71003DB23F /* CollisionDetector.h */,
 				367B43B616DECC71003DB23F /* CollisionDetector.m */,
 			);
@@ -675,6 +687,7 @@
 		DC0C49E6154AB4DD00B4B727 = {
 			isa = PBXGroup;
 			children = (
+				36AFFE9716E2392E00AD0035 /* SenTestingKit.framework */,
 				362B3B6016D37F01005A5872 /* Default-568h@2x.png */,
 				DC0C4A07154AB4DD00B4B727 /* cocos2d-2.x-ARC-iOS */,
 				DC0C49F4154AB4DD00B4B727 /* Frameworks */,
@@ -703,6 +716,7 @@
 				DC0C4A01154AB4DD00B4B727 /* Foundation.framework */,
 				DC0C4A03154AB4DD00B4B727 /* CoreGraphics.framework */,
 				DC0C4A05154AB4DD00B4B727 /* GameKit.framework */,
+				36AFFE0F16E2333F00AD0035 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -710,6 +724,8 @@
 		DC0C4A07154AB4DD00B4B727 /* cocos2d-2.x-ARC-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				36AFFE0816E2290A00AD0035 /* Scenes */,
+				36AFFE0116E0D88F00AD0035 /* BulletCreatePattern */,
 				36D6A45E16DCF676007A7C4E /* Logic */,
 				36D6A35416D4EF26007A7C4E /* Sprites */,
 				36D6A34D16D4E89C007A7C4E /* Layers */,
@@ -1341,7 +1357,7 @@
 				367B43B416DEC63F003DB23F /* SpriteTag.m in Sources */,
 				367B43B716DECC71003DB23F /* CollisionDetector.m in Sources */,
 				367B43BD16DEDCCB003DB23F /* NextStage.m in Sources */,
-				367B43C416DF9767003DB23F /* BulletClone.m in Sources */,
+				36AFFE0716E0E9BC00AD0035 /* MainScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

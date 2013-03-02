@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "BulletPattern.h"
+#import "BulletNormal.h"
 
-@interface NormalPattern : NSObject<BulletPattern>
+@interface NormalPattern : NSObject<BulletPattern> {
+}
 
 @end

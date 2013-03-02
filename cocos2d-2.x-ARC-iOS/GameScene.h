@@ -20,7 +20,6 @@
     EnemyLayer *_enemyLayer;
     NSMutableArray *_items;
     NSMutableArray *_bullets;
-    BOOL _isTouches;
     CGPoint _touchLocation;
 }
 

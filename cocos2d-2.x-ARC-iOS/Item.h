@@ -17,7 +17,6 @@ typedef NS_ENUM(NSUInteger, ItemType) {
 };
 
 @interface Item : CCSprite {
-    
 }
 
 @property (nonatomic, assign) ItemType type;

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "BulletNormal.h"
-#import "BulletClone.h"
 
 @protocol BulletPatternDelegate <NSObject>
 @required
