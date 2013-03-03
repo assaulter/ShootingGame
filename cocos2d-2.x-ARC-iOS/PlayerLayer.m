@@ -19,6 +19,7 @@
         self.bullets = [NSMutableArray new];
         self.player = [Player new];
         self.player.position = ccp(winSize.width/2, self.player.contentSize.height/2);
+        _touchLocation = ccp(winSize.width/2, self.player.contentSize.height/2);
 
         // bulletPatternを生成
         _bulletPattern = [NormalPattern new];
@@ -26,8 +27,16 @@
 
         [self addChild:self.player];
         [self schedule:@selector(addBullet:) interval:1.0f];
+//        [self schedule:@selector(movePlayer:)];
     }
     return self;
+}
+
+// プレイヤーをtouchした位置に移動させる(runActionを使わないバージョン)
+-(void)movePlayer:(ccTime)dt {
+    // 長さ1に正規化されたベクトル
+    CGPoint v = ccpNormalize(ccpSub(_touchLocation, self.player.position));
+    self.player.position = ccpAdd(v, self.player.position);
 }
 
 // 実際に弾を撃ってるところ
@@ -56,6 +65,11 @@
 #pragma mark - bulletPatternDelegate
 -(void)addBulletToLayer:(BulletNormal*)bullet {
     [self addChild:bullet];
+}
+
+#pragma mark - observer protocol
+-(void)update:(CGPoint)point {
+    _touchLocation = point;
 }
 
 @end

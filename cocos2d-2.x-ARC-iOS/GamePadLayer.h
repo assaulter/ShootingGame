@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Subject.h"
 
 // ユーザーの入力を受けるクラス
-@interface GamePadLayer : CCLayer {
+@interface GamePadLayer : CCLayer<Subject> {
+    NSMutableArray *_observers;
 }
 
 @property(nonatomic, assign) CGPoint touchLocation;

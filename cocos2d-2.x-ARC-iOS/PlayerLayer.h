@@ -10,10 +10,12 @@
 #import "cocos2d.h"
 #import "Player.h"
 #import "BulletPattern.h"
+#import "Observer.h"
 
 // プレイヤーに関連するものを管理するレイヤー
-@interface PlayerLayer : CCLayer<BulletPatternDelegate> {
+@interface PlayerLayer : CCLayer<BulletPatternDelegate, Observer> {
     NSObject<BulletPattern> *_bulletPattern;
+    CGPoint _touchLocation;
 }
 
 @property(nonatomic, strong) Player *player; // player(GameSceneから参照するために)

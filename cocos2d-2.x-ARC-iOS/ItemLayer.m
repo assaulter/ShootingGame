@@ -15,7 +15,6 @@
     if (self = [super init]) {
         self.items = [NSMutableArray new];
         _itemTypes = [self setTypesToArray];
-//        [self schedule:@selector(addItem:) interval:5.0f];
     }
     return self;
 }

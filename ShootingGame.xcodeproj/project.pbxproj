@@ -297,6 +297,8 @@
 		36AFFE0616E0E9BC00AD0035 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		36AFFE0F16E2333F00AD0035 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		36AFFE9716E2392E00AD0035 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		36AFFE9F16E2501600AD0035 /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
+		36AFFEA016E2506400AD0035 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
 		36D6A33916D3948E007A7C4E /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
 		36D6A34016D42218007A7C4E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		36D6A34116D42218007A7C4E /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
@@ -654,6 +656,8 @@
 				36D6A35216D4EC4A007A7C4E /* ItemLayer.m */,
 				36D6A42016DAD2FA007A7C4E /* EnemyLayer.h */,
 				36D6A42116DAD2FB007A7C4E /* EnemyLayer.m */,
+				36AFFE9F16E2501600AD0035 /* Observer.h */,
+				36AFFEA016E2506400AD0035 /* Subject.h */,
 			);
 			name = Layers;
 			sourceTree = "<group>";

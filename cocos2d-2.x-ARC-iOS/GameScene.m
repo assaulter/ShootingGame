@@ -47,6 +47,7 @@
         [self addChild:_enemyLayer z:2];
         // ユーザーの操作を受けるlayer
         _gamePadLayer = [[GamePadLayer alloc] init];
+        [_gamePadLayer addObserver:_playerLayer];
         [self addChild:_gamePadLayer z:3];
 
         [self schedule:@selector(update:)];
