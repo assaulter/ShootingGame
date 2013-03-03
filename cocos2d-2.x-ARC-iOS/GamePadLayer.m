@@ -29,26 +29,27 @@
 
 -(void)notifyObservers {
     for (id<Observer> observer in _observers) {
-        [observer update:self.touchLocation];
+        [observer update:_touchLocation isTouches:_isTouches];
     }
 }
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     // Choose one of the touches to work with
     CGPoint location = [self getLocationFromTouches:touches];
-    self.touchLocation = location;
-//    [self notifyObservers];
-    self.isTouches = YES;
+    _touchLocation = location;
+    _isTouches = YES;
+    [self notifyObservers];
 }
 
 -(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     CGPoint location = [self getLocationFromTouches:touches];
-    self.touchLocation = location;
-//    [self notifyObservers];
+    _touchLocation = location;
+    [self notifyObservers];
 }
 
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    self.isTouches = NO;
+    _isTouches = NO;
+    [self notifyObservers];
 }
 
 // UITouchから、Pointに変換して返すヘルパー関数

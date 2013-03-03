@@ -13,9 +13,8 @@
 // ユーザーの入力を受けるクラス
 @interface GamePadLayer : CCLayer<Subject> {
     NSMutableArray *_observers;
+    CGPoint _touchLocation;
+    BOOL _isTouches;
 }
-
-@property(nonatomic, assign) CGPoint touchLocation;
-@property(nonatomic, assign) BOOL isTouches;
 
 @end

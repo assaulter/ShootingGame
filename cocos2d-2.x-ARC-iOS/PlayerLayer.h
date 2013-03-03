@@ -16,6 +16,7 @@
 @interface PlayerLayer : CCLayer<BulletPatternDelegate, Observer> {
     NSObject<BulletPattern> *_bulletPattern;
     CGPoint _touchLocation;
+    BOOL _isTouches;
 }
 
 @property(nonatomic, strong) Player *player; // player(GameSceneから参照するために)

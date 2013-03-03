@@ -16,7 +16,6 @@
 @interface GameScene : CCLayerColor {
     PlayerLayer *_playerLayer;
     ItemLayer *_itemLayer;
-    GamePadLayer *_gamePadLayer;
     EnemyLayer *_enemyLayer;
     NSMutableArray *_items;
     NSMutableArray *_bullets;

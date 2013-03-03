@@ -11,6 +11,6 @@
 @protocol Observer <NSObject>
 
 @required
--(void)update:(CGPoint)point;
+-(void)update:(CGPoint)point isTouches:(BOOL)isTouches;
 
 @end

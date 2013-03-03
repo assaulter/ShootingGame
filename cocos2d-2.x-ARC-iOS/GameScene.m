@@ -46,27 +46,17 @@
         _enemyLayer = [[EnemyLayer alloc] init];
         [self addChild:_enemyLayer z:2];
         // ユーザーの操作を受けるlayer
-        _gamePadLayer = [[GamePadLayer alloc] init];
-        [_gamePadLayer addObserver:_playerLayer];
-        [self addChild:_gamePadLayer z:3];
+        GamePadLayer *gamePadLayer = [[GamePadLayer alloc] init];
+        [gamePadLayer addObserver:_playerLayer];
+        [self addChild:gamePadLayer z:3];
 
         [self schedule:@selector(update:)];
     }
     return self;
 }
 
-// プレイヤーをtouchした位置に移動させる(runActionを使わないバージョン)
--(void)movePlayer {
-    // 長さ1に正規化されたベクトル
-    CGPoint v = ccpNormalize(ccpSub(_gamePadLayer.touchLocation, _playerLayer.player.position));
-    _playerLayer.player.position = ccpAdd(v, _playerLayer.player.position);
-}
-
 // 今のところ当たり判定君, @param dt : 1/60sec
 -(void)update:(ccTime)dt {
-    if (_gamePadLayer.isTouches) {
-        [self movePlayer];
-    }
     NSMutableArray *spritesToDelete = [NSMutableArray new];
     Player *player = _playerLayer.player;
     // itemとplayerの当たり判定
