@@ -9,10 +9,18 @@
 /* Begin PBXBuildFile section */
 		362B3B5F16D3785C005A5872 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 362B3B5E16D3785C005A5872 /* GameScene.m */; };
 		362B3B6116D37F01005A5872 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 362B3B6016D37F01005A5872 /* Default-568h@2x.png */; };
+		366DE03816E5F69700259C2C /* BossLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 366DE03716E5F69700259C2C /* BossLayer.m */; };
+		366DE03B16E5F7F000259C2C /* Boss.m in Sources */ = {isa = PBXBuildFile; fileRef = 366DE03A16E5F7F000259C2C /* Boss.m */; };
 		367B43B416DEC63F003DB23F /* SpriteTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 367B43B316DEC63F003DB23F /* SpriteTag.m */; };
 		367B43B716DECC71003DB23F /* CollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 367B43B616DECC71003DB23F /* CollisionDetector.m */; };
 		367B43BD16DEDCCB003DB23F /* NextStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 367B43BC16DEDCCA003DB23F /* NextStage.m */; };
 		36AFFE0716E0E9BC00AD0035 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AFFE0616E0E9BC00AD0035 /* MainScene.m */; };
+		36AFFEA716E373D900AD0035 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AFFEA616E373D900AD0035 /* GameOverScene.m */; };
+		36AFFEAA16E4147600AD0035 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AFFEA916E4147600AD0035 /* EnemyFactory.m */; };
+		36AFFEB016E55F1C00AD0035 /* EnemyProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AFFEAF16E55F1C00AD0035 /* EnemyProduct.m */; };
+		36AFFEB416E562B500AD0035 /* Target2.png in Resources */ = {isa = PBXBuildFile; fileRef = 36AFFEB116E562B500AD0035 /* Target2.png */; };
+		36AFFEB516E562B500AD0035 /* Target3.png in Resources */ = {isa = PBXBuildFile; fileRef = 36AFFEB216E562B500AD0035 /* Target3.png */; };
+		36AFFEB616E562B500AD0035 /* Target4.png in Resources */ = {isa = PBXBuildFile; fileRef = 36AFFEB316E562B500AD0035 /* Target4.png */; };
 		36D6A33A16D3948E007A7C4E /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A33916D3948E007A7C4E /* Player.png */; };
 		36D6A34216D42218007A7C4E /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D6A34116D42218007A7C4E /* Player.m */; };
 		36D6A34416D42639007A7C4E /* Projectile2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 36D6A34316D42639007A7C4E /* Projectile2.jpg */; };
@@ -287,6 +295,10 @@
 		362B3B5D16D3785C005A5872 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		362B3B5E16D3785C005A5872 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		362B3B6016D37F01005A5872 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		366DE03616E5F69700259C2C /* BossLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BossLayer.h; sourceTree = "<group>"; };
+		366DE03716E5F69700259C2C /* BossLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BossLayer.m; sourceTree = "<group>"; };
+		366DE03916E5F7F000259C2C /* Boss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boss.h; sourceTree = "<group>"; };
+		366DE03A16E5F7F000259C2C /* Boss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Boss.m; sourceTree = "<group>"; };
 		367B43B216DEC63F003DB23F /* SpriteTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteTag.h; sourceTree = "<group>"; };
 		367B43B316DEC63F003DB23F /* SpriteTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteTag.m; sourceTree = "<group>"; };
 		367B43B516DECC71003DB23F /* CollisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionDetector.h; sourceTree = "<group>"; };
@@ -299,6 +311,15 @@
 		36AFFE9716E2392E00AD0035 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		36AFFE9F16E2501600AD0035 /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
 		36AFFEA016E2506400AD0035 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		36AFFEA516E373D900AD0035 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		36AFFEA616E373D900AD0035 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		36AFFEA816E4147600AD0035 /* EnemyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyFactory.h; sourceTree = "<group>"; };
+		36AFFEA916E4147600AD0035 /* EnemyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyFactory.m; sourceTree = "<group>"; };
+		36AFFEAE16E55F1C00AD0035 /* EnemyProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyProduct.h; sourceTree = "<group>"; };
+		36AFFEAF16E55F1C00AD0035 /* EnemyProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyProduct.m; sourceTree = "<group>"; };
+		36AFFEB116E562B500AD0035 /* Target2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target2.png; sourceTree = "<group>"; };
+		36AFFEB216E562B500AD0035 /* Target3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target3.png; sourceTree = "<group>"; };
+		36AFFEB316E562B500AD0035 /* Target4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target4.png; sourceTree = "<group>"; };
 		36D6A33916D3948E007A7C4E /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
 		36D6A34016D42218007A7C4E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		36D6A34116D42218007A7C4E /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
@@ -641,6 +662,8 @@
 				367B43BC16DEDCCA003DB23F /* NextStage.m */,
 				36AFFE0516E0E9BC00AD0035 /* MainScene.h */,
 				36AFFE0616E0E9BC00AD0035 /* MainScene.m */,
+				36AFFEA516E373D900AD0035 /* GameOverScene.h */,
+				36AFFEA616E373D900AD0035 /* GameOverScene.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -658,6 +681,10 @@
 				36D6A42116DAD2FB007A7C4E /* EnemyLayer.m */,
 				36AFFE9F16E2501600AD0035 /* Observer.h */,
 				36AFFEA016E2506400AD0035 /* Subject.h */,
+				36AFFEA816E4147600AD0035 /* EnemyFactory.h */,
+				36AFFEA916E4147600AD0035 /* EnemyFactory.m */,
+				366DE03616E5F69700259C2C /* BossLayer.h */,
+				366DE03716E5F69700259C2C /* BossLayer.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -675,6 +702,10 @@
 				36D6A45C16DCE5CE007A7C4E /* Item.m */,
 				367B43B216DEC63F003DB23F /* SpriteTag.h */,
 				367B43B316DEC63F003DB23F /* SpriteTag.m */,
+				36AFFEAE16E55F1C00AD0035 /* EnemyProduct.h */,
+				36AFFEAF16E55F1C00AD0035 /* EnemyProduct.m */,
+				366DE03916E5F7F000259C2C /* Boss.h */,
+				366DE03A16E5F7F000259C2C /* Boss.m */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -745,6 +776,9 @@
 		DC0C4A08154AB4DD00B4B727 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				36AFFEB116E562B500AD0035 /* Target2.png */,
+				36AFFEB216E562B500AD0035 /* Target3.png */,
+				36AFFEB316E562B500AD0035 /* Target4.png */,
 				36D6A45916DCDBCA007A7C4E /* Normal.png */,
 				36D6A44B16DCD337007A7C4E /* Threeway.png */,
 				36D6A42316DAD385007A7C4E /* Target.png */,
@@ -1334,6 +1368,9 @@
 				36D6A42416DAD385007A7C4E /* Target.png in Resources */,
 				36D6A44C16DCD337007A7C4E /* Threeway.png in Resources */,
 				36D6A45A16DCDBCA007A7C4E /* Normal.png in Resources */,
+				36AFFEB416E562B500AD0035 /* Target2.png in Resources */,
+				36AFFEB516E562B500AD0035 /* Target3.png in Resources */,
+				36AFFEB616E562B500AD0035 /* Target4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1362,6 +1399,11 @@
 				367B43B716DECC71003DB23F /* CollisionDetector.m in Sources */,
 				367B43BD16DEDCCB003DB23F /* NextStage.m in Sources */,
 				36AFFE0716E0E9BC00AD0035 /* MainScene.m in Sources */,
+				36AFFEA716E373D900AD0035 /* GameOverScene.m in Sources */,
+				36AFFEAA16E4147600AD0035 /* EnemyFactory.m in Sources */,
+				36AFFEB016E55F1C00AD0035 /* EnemyProduct.m in Sources */,
+				366DE03816E5F69700259C2C /* BossLayer.m in Sources */,
+				366DE03B16E5F7F000259C2C /* Boss.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

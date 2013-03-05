@@ -15,14 +15,24 @@
     if (self = [super init]) {
         self.enemies = [NSMutableArray new];
         [self schedule:@selector(addEnemy:) interval:3.0f];
+        _factory = [EnemyFactory new];
+        _factory.delegate = self;
     }
     return self;
 }
 
-// add enemies
 -(void)addEnemy:(ccTime)dt {
-    Enemy *enemy = [Enemy new];
+    EnemyProduct *enemy = [_factory createProductFromEnemyType:EnemyTypeNormal];
+    [self initEnemyPosition:enemy];
+    NSArray *animations = [_factory getAnimationsFromEnemyType:EnemyTypeNormal enemy:enemy];
     
+    [self addChild:enemy];
+    [self.enemies addObject:enemy];
+    // TODO: マジックナンバー
+    [enemy runAction:[CCSequence actions:animations[0], animations[1], nil]];
+}
+
+-(void)initEnemyPosition:(EnemyProduct*)enemy {
     // Determine where to spawn the target along the X axis
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     int minX = enemy.contentSize.width/2;
@@ -31,21 +41,10 @@
     int actualX = (arc4random() % rangeX) + minX;
     
     enemy.position = ccp(actualX, winSize.height + (enemy.contentSize.height/2));
-    [self addChild:enemy];
-    
-    // save item to MutableArray
     enemy.tag = SpriteTagsEnemy;
-    [self.enemies addObject:enemy];
-    
-    // create actions
-    id actionMove = [CCMoveTo actionWithDuration:5.0f
-                                        position:ccp(actualX, -enemy.contentSize.height/2)];
-    
-    id actionMoveDone = [CCCallFuncN actionWithTarget:self
-                                             selector:@selector(spriteMoveFinished:)];
-    [enemy runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
 }
 
+#pragma mark - EnemyFactoryDelegate method
 // アニメーションが終了した時の処理 = 画面から消えたとき
 -(void)spriteMoveFinished:(id)sender {
     CCSprite *sprite = (CCSprite *)sender;

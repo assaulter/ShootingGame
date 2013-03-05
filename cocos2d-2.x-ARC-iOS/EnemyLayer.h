@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface EnemyLayer : CCLayer {
+#import "EnemyFactory.h"
+
+@interface EnemyLayer : CCLayer<EnemyFactoryDelegate> {
+    EnemyFactory *_factory;
 }
 
 @property(nonatomic, strong) NSMutableArray *enemies;

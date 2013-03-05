@@ -10,11 +10,4 @@
 
 @implementation Enemy
 
--(id)init {
-    if (self = [super init]) {
-        self = [CCSprite spriteWithFile:@"Target.png"];
-    }
-    return self;
-}
-
 @end

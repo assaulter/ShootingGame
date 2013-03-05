@@ -13,7 +13,7 @@
 #import "ThreeWayPattern.h"
 #import "CollisionDetector.h"
 #import "NextStage.h"
-
+#import "GameOverScene.h"
 
 @implementation GameScene
 
@@ -45,10 +45,13 @@
         // 敵関連を持つlayer
         _enemyLayer = [[EnemyLayer alloc] init];
         [self addChild:_enemyLayer z:2];
+        // ボスを持つlayer
+        _bossLayer = [[BossLayer alloc] init];
+        [self addChild:_bossLayer z:3];
         // ユーザーの操作を受けるlayer
         GamePadLayer *gamePadLayer = [[GamePadLayer alloc] init];
         [gamePadLayer addObserver:_playerLayer];
-        [self addChild:gamePadLayer z:3];
+        [self addChild:gamePadLayer z:4];
 
         [self schedule:@selector(update:)];
     }
@@ -76,6 +79,11 @@
                 [_itemLayer addItemWithEnemyPosition:enemy.position];
             }
         }
+    }
+    // bossとの当たり判定
+    Boss *boss = _bossLayer.boss;
+    if ([CollisionDetector isCollided:player sprite:boss]) {
+        [self goToGameOverScene];
     }
     // あたったやつは削除
     [self deleteSprites:spritesToDelete];
@@ -121,7 +129,16 @@
 
 // 次のステージへ移動する。
 -(void)goToNextStage {
+    [self unschedule:@selector(update:)];
+    
     CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[NextStage scene] withColor:ccc3(255, 255, 255)];
+    [[CCDirector sharedDirector]replaceScene:tran];
+}
+
+-(void)goToGameOverScene {
+    [self unschedule:@selector(update:)];
+    
+    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[GameOverScene scene] withColor:ccc3(255, 255, 255)];
     [[CCDirector sharedDirector]replaceScene:tran];
 }
 
