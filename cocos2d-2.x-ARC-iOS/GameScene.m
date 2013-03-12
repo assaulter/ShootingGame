@@ -111,7 +111,7 @@
     }
 }
 
-// 弾の発射
+// 弾の発射パターンを変更する。
 -(void)changeBulletPattern:(ItemType)itemType {
     switch (itemType) {
         case ItemTypeParallel:

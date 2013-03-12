@@ -28,7 +28,7 @@
     return [[NSMutableArray alloc] initWithObjects:normal, parallel, threeway, nil];
 }
 
-// add item with enemyPosition
+// add item with enemyPosition to self Layer
 -(void)addItemWithEnemyPosition:(CGPoint)position {
     Item *item = [self getItemWithType:[self getItemTypeRand]];
     item.position = position;

@@ -18,4 +18,12 @@
     return self;
 }
 
+-(id)initWithFile:(NSString *)filename lifePoint:(int)lifePoint {
+    if (self = [super init]) {
+        self = [CCSprite spriteWithFile:filename];
+        self.lifePoint = lifePoint;
+    }
+    return self;
+}
+
 @end

@@ -13,4 +13,8 @@
     
 }
 
+@property(nonatomic, assign) int lifePoint;
+
+-(id)initWithFile:(NSString *)filename lifePoint:(int)lifePoint;
+
 @end
